@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="InputsOutputsDataSet" targetNamespace="http://tempuri.org/InputsOutputsDataSet.xsd" xmlns:mstns="http://tempuri.org/InputsOutputsDataSet.xsd" xmlns="http://tempuri.org/InputsOutputsDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DefaultConnection" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DefaultConnection (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.InputsOutputs.Properties.Settings.GlobalReference.Default.DefaultConnection" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AllTableAdapter" GeneratorDataComponentClassName="AllTableAdapter" Name="All" UserDataComponentName="AllTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DefaultConnection (Settings)" DbObjectName="InputsOutputs.dbo.[All]" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id, SellerName, Date, Name, PriceRonCash, PriceRonCashRegister, PriceEuro, PricePounds, Type FROM dbo.[All]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="SellerName" DataSetColumn="SellerName" />
+              <Mapping SourceColumn="Date" DataSetColumn="Date" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="PriceRonCash" DataSetColumn="PriceRonCash" />
+              <Mapping SourceColumn="PriceRonCashRegister" DataSetColumn="PriceRonCashRegister" />
+              <Mapping SourceColumn="PriceEuro" DataSetColumn="PriceEuro" />
+              <Mapping SourceColumn="PricePounds" DataSetColumn="PricePounds" />
+              <Mapping SourceColumn="Type" DataSetColumn="Type" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="InputsOutputsDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="InputsOutputsDataSet" msprop:Generator_UserDSName="InputsOutputsDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="All" msprop:Generator_TableClassName="AllDataTable" msprop:Generator_TableVarName="tableAll" msprop:Generator_TablePropName="All" msprop:Generator_RowDeletingName="AllRowDeleting" msprop:Generator_RowChangingName="AllRowChanging" msprop:Generator_RowEvHandlerName="AllRowChangeEventHandler" msprop:Generator_RowDeletedName="AllRowDeleted" msprop:Generator_UserTableName="All" msprop:Generator_RowChangedName="AllRowChanged" msprop:Generator_RowEvArgName="AllRowChangeEvent" msprop:Generator_RowClassName="AllRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="SellerName" msprop:Generator_ColumnVarNameInTable="columnSellerName" msprop:Generator_ColumnPropNameInRow="SellerName" msprop:Generator_ColumnPropNameInTable="SellerNameColumn" msprop:Generator_UserColumnName="SellerName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:dateTime" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1024" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PriceRonCash" msprop:Generator_ColumnVarNameInTable="columnPriceRonCash" msprop:Generator_ColumnPropNameInRow="PriceRonCash" msprop:Generator_ColumnPropNameInTable="PriceRonCashColumn" msprop:Generator_UserColumnName="PriceRonCash" type="xs:int" minOccurs="0" />
+              <xs:element name="PriceRonCashRegister" msprop:Generator_ColumnVarNameInTable="columnPriceRonCashRegister" msprop:Generator_ColumnPropNameInRow="PriceRonCashRegister" msprop:Generator_ColumnPropNameInTable="PriceRonCashRegisterColumn" msprop:Generator_UserColumnName="PriceRonCashRegister" type="xs:int" minOccurs="0" />
+              <xs:element name="PriceEuro" msprop:Generator_ColumnVarNameInTable="columnPriceEuro" msprop:Generator_ColumnPropNameInRow="PriceEuro" msprop:Generator_ColumnPropNameInTable="PriceEuroColumn" msprop:Generator_UserColumnName="PriceEuro" type="xs:int" minOccurs="0" />
+              <xs:element name="PricePounds" msprop:Generator_ColumnVarNameInTable="columnPricePounds" msprop:Generator_ColumnPropNameInRow="PricePounds" msprop:Generator_ColumnPropNameInTable="PricePoundsColumn" msprop:Generator_UserColumnName="PricePounds" type="xs:int" minOccurs="0" />
+              <xs:element name="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_UserColumnName="Type">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

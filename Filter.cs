@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace InputsOutputs
 {
-    public partial class Form1 : Form
+    public partial class Filter : Form
     {
-        public Form1()
+        public Filter()
         {
             InitializeComponent();
         }
