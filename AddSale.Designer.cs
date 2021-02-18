@@ -44,7 +44,6 @@ namespace InputsOutputs
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddSale";
-            this.TopMost = true;
             this.ResumeLayout(false);
 
         }

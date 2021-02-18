@@ -31,52 +31,48 @@ namespace InputsOutputs
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.lblTitle = new System.Windows.Forms.Label();
             this.tblPrincipal = new System.Windows.Forms.TableLayoutPanel();
             this.grdAll = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sellerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceRonCashDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceRonCashRegisterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceEuroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pricePoundsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.allBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.inputsOutputsDataSet = new InputsOutputs.InputsOutputsDataSet();
             this.tblFooter = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.allTableAdapter = new InputsOutputs.InputsOutputsDataSetTableAdapters.AllTableAdapter();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblFiltersInfo = new System.Windows.Forms.Label();
             this.btnFilter = new System.Windows.Forms.Button();
             this.btnAddReturn = new System.Windows.Forms.Button();
             this.btnAddCost = new System.Windows.Forms.Button();
             this.btnAddSale = new System.Windows.Forms.Button();
             this.imgLogo = new System.Windows.Forms.PictureBox();
+            this.inputsOutputsDataSet = new InputsOutputs.InputsOutputsDataSet();
+            this.dataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTableAdapter = new InputsOutputs.InputsOutputsDataSetTableAdapters.DataTableAdapter();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdAll)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.allBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inputsOutputsDataSet)).BeginInit();
             this.tblFooter.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputsOutputsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -98,6 +94,7 @@ namespace InputsOutputs
             this.tblPrincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tblPrincipal.Controls.Add(this.grdAll, 0, 2);
             this.tblPrincipal.Controls.Add(this.tblFooter, 0, 4);
+            this.tblPrincipal.Controls.Add(this.lblFiltersInfo, 0, 0);
             this.tblPrincipal.Location = new System.Drawing.Point(13, 157);
             this.tblPrincipal.Name = "tblPrincipal";
             this.tblPrincipal.RowCount = 5;
@@ -133,120 +130,35 @@ namespace InputsOutputs
             this.grdAll.ColumnHeadersHeight = 35;
             this.grdAll.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.grdAll.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.sellerNameDataGridViewTextBoxColumn,
-            this.dateDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.priceRonCashDataGridViewTextBoxColumn,
-            this.priceRonCashRegisterDataGridViewTextBoxColumn,
-            this.priceEuroDataGridViewTextBoxColumn,
-            this.pricePoundsDataGridViewTextBoxColumn,
-            this.typeDataGridViewTextBoxColumn});
-            this.grdAll.DataSource = this.allBindingSource;
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9});
+            this.grdAll.DataSource = this.dataBindingSource;
             this.grdAll.Location = new System.Drawing.Point(3, 43);
             this.grdAll.MultiSelect = false;
             this.grdAll.Name = "grdAll";
             this.grdAll.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdAll.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.grdAll.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdAll.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.grdAll.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.grdAll.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.grdAll.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdAll.Size = new System.Drawing.Size(1185, 325);
             this.grdAll.TabIndex = 0;
             this.grdAll.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grdAll_CellFormatting);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // sellerNameDataGridViewTextBoxColumn
-            // 
-            this.sellerNameDataGridViewTextBoxColumn.DataPropertyName = "SellerName";
-            this.sellerNameDataGridViewTextBoxColumn.HeaderText = "Vanzator";
-            this.sellerNameDataGridViewTextBoxColumn.Name = "sellerNameDataGridViewTextBoxColumn";
-            this.sellerNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Data";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Denumire Piesa";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceRonCashDataGridViewTextBoxColumn
-            // 
-            this.priceRonCashDataGridViewTextBoxColumn.DataPropertyName = "PriceRonCash";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.priceRonCashDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.priceRonCashDataGridViewTextBoxColumn.HeaderText = "Pret RON (Cash)";
-            this.priceRonCashDataGridViewTextBoxColumn.Name = "priceRonCashDataGridViewTextBoxColumn";
-            this.priceRonCashDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceRonCashRegisterDataGridViewTextBoxColumn
-            // 
-            this.priceRonCashRegisterDataGridViewTextBoxColumn.DataPropertyName = "PriceRonCashRegister";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.priceRonCashRegisterDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.priceRonCashRegisterDataGridViewTextBoxColumn.HeaderText = "Pret RON (C.M.)";
-            this.priceRonCashRegisterDataGridViewTextBoxColumn.Name = "priceRonCashRegisterDataGridViewTextBoxColumn";
-            this.priceRonCashRegisterDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceEuroDataGridViewTextBoxColumn
-            // 
-            this.priceEuroDataGridViewTextBoxColumn.DataPropertyName = "PriceEuro";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.priceEuroDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.priceEuroDataGridViewTextBoxColumn.HeaderText = "Pret EURO";
-            this.priceEuroDataGridViewTextBoxColumn.Name = "priceEuroDataGridViewTextBoxColumn";
-            this.priceEuroDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pricePoundsDataGridViewTextBoxColumn
-            // 
-            this.pricePoundsDataGridViewTextBoxColumn.DataPropertyName = "PricePounds";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.pricePoundsDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.pricePoundsDataGridViewTextBoxColumn.HeaderText = "Pret LIRE";
-            this.pricePoundsDataGridViewTextBoxColumn.Name = "pricePoundsDataGridViewTextBoxColumn";
-            this.pricePoundsDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // typeDataGridViewTextBoxColumn
-            // 
-            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
-            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
-            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
-            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.typeDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // allBindingSource
-            // 
-            this.allBindingSource.DataMember = "All";
-            this.allBindingSource.DataSource = this.inputsOutputsDataSet;
-            // 
-            // inputsOutputsDataSet
-            // 
-            this.inputsOutputsDataSet.DataSetName = "InputsOutputsDataSet";
-            this.inputsOutputsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tblFooter
             // 
@@ -264,6 +176,19 @@ namespace InputsOutputs
             this.tblFooter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tblFooter.Size = new System.Drawing.Size(1185, 86);
             this.tblFooter.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label9.Location = new System.Drawing.Point(3, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(527, 86);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "TOTAL [01.01.2021 - 01.03.2021]             ";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tableLayoutPanel1
             // 
@@ -292,60 +217,41 @@ namespace InputsOutputs
             this.tableLayoutPanel1.Size = new System.Drawing.Size(646, 80);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // label1
+            // label8
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "RON (Cash)";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label8.AutoSize = true;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic);
+            this.label8.Location = new System.Drawing.Point(486, 19);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(157, 15);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Vanzari - (Cheltuieli + Retur)";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // allTableAdapter
+            // label7
             // 
-            this.allTableAdapter.ClearBeforeFill = true;
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic);
+            this.label7.Location = new System.Drawing.Point(325, 19);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(155, 15);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Vanzari - (Cheltuieli + Retur)";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // label6
             // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic);
-            this.label5.Location = new System.Drawing.Point(3, 19);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(155, 15);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Vanzari - (Cheltuieli + Retur)";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label2.Location = new System.Drawing.Point(164, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 19);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "RON (C.M.)";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label3.Location = new System.Drawing.Point(325, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(155, 19);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "EURO";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic);
+            this.label6.Location = new System.Drawing.Point(164, 19);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(155, 15);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Vanzari - (Cheltuieli + Retur)";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -360,64 +266,79 @@ namespace InputsOutputs
             this.label4.Text = "LIRE";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // label3
             // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic);
-            this.label6.Location = new System.Drawing.Point(164, 19);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(155, 15);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Vanzari - (Cheltuieli + Retur)";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label3.Location = new System.Drawing.Point(325, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(155, 19);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "EURO";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label7
+            // label2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic);
-            this.label7.Location = new System.Drawing.Point(325, 19);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(155, 15);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Vanzari - (Cheltuieli + Retur)";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label2.Location = new System.Drawing.Point(164, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(155, 19);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "RON (C.M.)";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label8
+            // label5
             // 
-            this.label8.AutoSize = true;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic);
-            this.label8.Location = new System.Drawing.Point(486, 19);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(157, 15);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Vanzari - (Cheltuieli + Retur)";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic);
+            this.label5.Location = new System.Drawing.Point(3, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(155, 15);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Vanzari - (Cheltuieli + Retur)";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label9
+            // label1
             // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label9.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label9.Location = new System.Drawing.Point(3, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(527, 86);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "TOTAL [01.01.2021 - 01.03.2021]             ";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(155, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "RON (Cash)";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblFiltersInfo
+            // 
+            this.lblFiltersInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFiltersInfo.AutoSize = true;
+            this.lblFiltersInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiltersInfo.Location = new System.Drawing.Point(1133, 0);
+            this.lblFiltersInfo.Name = "lblFiltersInfo";
+            this.lblFiltersInfo.Size = new System.Drawing.Size(55, 15);
+            this.lblFiltersInfo.TabIndex = 2;
+            this.lblFiltersInfo.Text = "label10";
+            this.lblFiltersInfo.Visible = false;
             // 
             // btnFilter
             // 
             this.btnFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFilter.Image = global::InputsOutputs.Properties.Resources.filter;
-            this.btnFilter.Location = new System.Drawing.Point(1163, 100);
+            this.btnFilter.Location = new System.Drawing.Point(1160, 100);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(41, 39);
             this.btnFilter.TabIndex = 6;
             this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // btnAddReturn
             // 
@@ -472,6 +393,85 @@ namespace InputsOutputs
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
             // 
+            // inputsOutputsDataSet
+            // 
+            this.inputsOutputsDataSet.DataSetName = "InputsOutputsDataSet";
+            this.inputsOutputsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataBindingSource
+            // 
+            this.dataBindingSource.DataMember = "Data";
+            this.dataBindingSource.DataSource = this.inputsOutputsDataSet;
+            // 
+            // dataTableAdapter
+            // 
+            this.dataTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "SellerName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Vanzator";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Date";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Data";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Denumire Piesa";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "PriceRonCash";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Pret RON (Cash)";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "PriceRonCashRegister";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Pret RON (C.M.)";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "PriceEuro";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Pret EURO";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "PricePounds";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Pret LIRE";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Type";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Type";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Visible = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -490,14 +490,15 @@ namespace InputsOutputs
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             this.tblPrincipal.ResumeLayout(false);
+            this.tblPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdAll)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.allBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inputsOutputsDataSet)).EndInit();
             this.tblFooter.ResumeLayout(false);
             this.tblFooter.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputsOutputsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -512,18 +513,6 @@ namespace InputsOutputs
         private System.Windows.Forms.Button btnAddCost;
         private System.Windows.Forms.Button btnAddReturn;
         private System.Windows.Forms.DataGridView grdAll;
-        private InputsOutputsDataSet inputsOutputsDataSet;
-        private System.Windows.Forms.BindingSource allBindingSource;
-        private InputsOutputsDataSetTableAdapters.AllTableAdapter allTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sellerNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceRonCashDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceRonCashRegisterDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceEuroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pricePoundsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
         private System.Windows.Forms.TableLayoutPanel tblFooter;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
@@ -536,6 +525,28 @@ namespace InputsOutputs
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnFilter;
+        private System.Windows.Forms.Label lblFiltersInfo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sellerNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceRonCashDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceRonCashRegisterDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceEuroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pricePoundsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private InputsOutputsDataSet inputsOutputsDataSet;
+        private System.Windows.Forms.BindingSource dataBindingSource;
+        private InputsOutputsDataSetTableAdapters.DataTableAdapter dataTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
     }
 }
 

@@ -14,10 +14,6 @@ namespace InputsOutputs.Models.Database
             return new ApplicationDbContext();
         }
 
-        public DbSet<SaleModel> Sales { get; set; }
-
-        public DbSet<CostModel> Costs { get; set; }
-
-        public DbSet<ReturnModel> Returns { get; set; }
+        public DbSet<DataModel> AllData { get; set; }
     }
 }

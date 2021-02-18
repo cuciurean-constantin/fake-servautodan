@@ -4,13 +4,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InputsOutputs.Models.Database
 {
-    [Table("Sales")]
-    public class SaleModel
+    [Table("Data")]
+    public class DataModel
     {
         [Key]
         public int Id { get; set; }
 
-        [Required]
         [StringLength(128)]
         public string SellerName { get; set; }
 
@@ -28,5 +27,15 @@ namespace InputsOutputs.Models.Database
         public int? PriceEuro { get; set; }
 
         public int? PricePounds { get; set; }
+
+        [Required]
+        public DataType Type { get; set; }
+    }
+
+    public enum DataType
+    {
+        Sale,
+        Cost,
+        Return
     }
 }
