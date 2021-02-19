@@ -79,6 +79,22 @@ namespace InputsOutputs
             var table = new DataTable { Locale = CultureInfo.InvariantCulture };
             dataAdapter.Fill(table);
             bindingSource.DataSource = table;
+
+            var totalPriceRonCash = 0;
+            var totalPriceRonCashRegister = 0;
+            var totalPriceEuro = 0;
+            var totalPricePounds = 0;
+            for (var i = 0; i < grdAll.Rows.Count; i++)
+            {
+                totalPriceRonCash += grdAll.Rows[i].Cells[4].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[4].Value) : 0;
+                totalPriceRonCashRegister += grdAll.Rows[i].Cells[5].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[5].Value) : 0;
+                totalPriceEuro += grdAll.Rows[i].Cells[6].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[6].Value) : 0;
+                totalPricePounds += grdAll.Rows[i].Cells[7].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[7].Value) : 0;
+            }
+            lblTotalPriceRonCash.Text = totalPriceRonCash > 0 ? totalPriceRonCash.ToString(): "-";
+            lblTotalPriceRonCashRegister.Text = totalPriceRonCashRegister > 0 ? totalPriceRonCashRegister.ToString() : "-";
+            lblTotalPriceEuro.Text = totalPriceEuro > 0 ? totalPriceEuro.ToString() : "-";
+            lblTotalPricePounds.Text = totalPricePounds > 0 ? totalPricePounds.ToString() : "-";
         }
 
         private void FormatGridColums()

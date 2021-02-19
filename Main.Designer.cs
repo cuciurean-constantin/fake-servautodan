@@ -53,6 +53,10 @@ namespace InputsOutputs
             this.btnAddCost = new System.Windows.Forms.Button();
             this.btnAddSale = new System.Windows.Forms.Button();
             this.imgLogo = new System.Windows.Forms.PictureBox();
+            this.lblTotalPriceEuro = new System.Windows.Forms.Label();
+            this.lblTotalPricePounds = new System.Windows.Forms.Label();
+            this.lblTotalPriceRonCash = new System.Windows.Forms.Label();
+            this.lblTotalPriceRonCashRegister = new System.Windows.Forms.Label();
             this.tblPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdAll)).BeginInit();
             this.tblFooter.SuspendLayout();
@@ -173,6 +177,10 @@ namespace InputsOutputs
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.lblTotalPriceRonCashRegister, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblTotalPriceRonCash, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblTotalPricePounds, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblTotalPriceEuro, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label8, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.label7, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.label6, 1, 1);
@@ -366,6 +374,58 @@ namespace InputsOutputs
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
             // 
+            // lblTotalPriceEuro
+            // 
+            this.lblTotalPriceEuro.AutoSize = true;
+            this.lblTotalPriceEuro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTotalPriceEuro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblTotalPriceEuro.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblTotalPriceEuro.Location = new System.Drawing.Point(325, 34);
+            this.lblTotalPriceEuro.Name = "lblTotalPriceEuro";
+            this.lblTotalPriceEuro.Size = new System.Drawing.Size(155, 46);
+            this.lblTotalPriceEuro.TabIndex = 14;
+            this.lblTotalPriceEuro.Text = "Total EURO";
+            this.lblTotalPriceEuro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTotalPricePounds
+            // 
+            this.lblTotalPricePounds.AutoSize = true;
+            this.lblTotalPricePounds.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTotalPricePounds.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblTotalPricePounds.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblTotalPricePounds.Location = new System.Drawing.Point(486, 34);
+            this.lblTotalPricePounds.Name = "lblTotalPricePounds";
+            this.lblTotalPricePounds.Size = new System.Drawing.Size(157, 46);
+            this.lblTotalPricePounds.TabIndex = 15;
+            this.lblTotalPricePounds.Text = "Total LIRE";
+            this.lblTotalPricePounds.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTotalPriceRonCash
+            // 
+            this.lblTotalPriceRonCash.AutoSize = true;
+            this.lblTotalPriceRonCash.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTotalPriceRonCash.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblTotalPriceRonCash.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblTotalPriceRonCash.Location = new System.Drawing.Point(3, 34);
+            this.lblTotalPriceRonCash.Name = "lblTotalPriceRonCash";
+            this.lblTotalPriceRonCash.Size = new System.Drawing.Size(155, 46);
+            this.lblTotalPriceRonCash.TabIndex = 16;
+            this.lblTotalPriceRonCash.Text = "Total RON (Cash)";
+            this.lblTotalPriceRonCash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTotalPriceRonCashRegister
+            // 
+            this.lblTotalPriceRonCashRegister.AutoSize = true;
+            this.lblTotalPriceRonCashRegister.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTotalPriceRonCashRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblTotalPriceRonCashRegister.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblTotalPriceRonCashRegister.Location = new System.Drawing.Point(164, 34);
+            this.lblTotalPriceRonCashRegister.Name = "lblTotalPriceRonCashRegister";
+            this.lblTotalPriceRonCashRegister.Size = new System.Drawing.Size(155, 46);
+            this.lblTotalPriceRonCashRegister.TabIndex = 17;
+            this.lblTotalPriceRonCashRegister.Text = "Total RON (C.M.)";
+            this.lblTotalPriceRonCashRegister.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -418,6 +478,10 @@ namespace InputsOutputs
         private System.Windows.Forms.Label lblTotalInfo;
         private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.Label lblFiltersInfo;
+        private System.Windows.Forms.Label lblTotalPriceRonCashRegister;
+        private System.Windows.Forms.Label lblTotalPriceRonCash;
+        private System.Windows.Forms.Label lblTotalPricePounds;
+        private System.Windows.Forms.Label lblTotalPriceEuro;
     }
 }
 
