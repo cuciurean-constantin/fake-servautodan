@@ -413,7 +413,7 @@ namespace InputsOutputs
             // 
             this.btnAddCost.BackColor = System.Drawing.Color.PaleVioletRed;
             this.btnAddCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCost.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAddCost.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnAddCost.Image = global::InputsOutputs.Properties.Resources.get_money;
             this.btnAddCost.Location = new System.Drawing.Point(235, 100);
             this.btnAddCost.Name = "btnAddCost";
