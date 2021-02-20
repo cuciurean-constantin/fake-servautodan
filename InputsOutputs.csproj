@@ -217,6 +217,7 @@
     <None Include="Icons\filter.png" />
     <None Include="Icons\checked.png" />
     <None Include="Icons\files.png" />
+    <None Include="Icons\error.png" />
     <Content Include="Images\logo.jpg" />
     <None Include="Icons\exchange.png" />
     <Content Include="Icons\get-money.png" />

@@ -65,6 +65,27 @@ namespace InputsOutputs
             }
         }
 
+        private void btnAddSale_Click(object sender, EventArgs e)
+        {
+            var addSaleForm = new AddSale();
+            addSaleForm.NewDataDelegate += new AddSale.NewData(OnNewDataAdded);
+            addSaleForm.ShowDialog();
+        }
+
+        private void btnAddCost_Click(object sender, EventArgs e)
+        {
+            var addCostForm = new AddCost();
+            addCostForm.NewDataDelegate += new AddCost.NewData(OnNewDataAdded);
+            addCostForm.ShowDialog();
+        }
+
+        private void btnAddReturn_Click(object sender, EventArgs e)
+        {
+            var addReturnForm = new AddReturn();
+            addReturnForm.NewDataDelegate += new AddReturn.NewData(OnNewDataAdded);
+            addReturnForm.ShowDialog();
+        }
+
         private void btnFilter_Click(object sender, EventArgs e)
         {
             var filterForm = new Filter();
@@ -113,13 +134,13 @@ namespace InputsOutputs
                             pdfDoc.Add(new Paragraph(" ", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 5)));
                             if (!string.IsNullOrEmpty(partNameFilter))
                             {
-                                var filter = new Paragraph($"Termen de cautare: [{partNameFilter}]", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 7));
+                                var filter = new Paragraph($"Termen de cautare: [{partNameFilter}]", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 8));
                                 filter.Alignment = Element.ALIGN_CENTER;
                                 pdfDoc.Add(filter);
                             }
-                            var dates = new Paragraph($"Perioada: [{dateFromFilter.ToShortDateString()} - {dateToFilter.ToShortDateString()}]", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 7));
+                            var dates = new Paragraph($"Perioada: [{dateFromFilter.ToShortDateString()} - {dateToFilter.ToShortDateString()}]", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 8));
                             if (dateFromFilter == dateToFilter)
-                                dates = new Paragraph($"Data: [{dateFromFilter.ToShortDateString()}]", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 7));
+                                dates = new Paragraph($"Data: [{dateFromFilter.ToShortDateString()}]", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 8));
                             dates.Alignment = Element.ALIGN_CENTER;
                             pdfDoc.Add(dates);
                             pdfDoc.Add(blankLine);
@@ -518,6 +539,7 @@ namespace InputsOutputs
             grdAll.Columns[1].HeaderText = "Vanzator";
             grdAll.Columns[2].HeaderText = "Data";
             grdAll.Columns[3].HeaderText = "Denumire Piesa";
+            grdAll.Columns[3].Width = 500;
             grdAll.Columns[4].HeaderText = "Pret RON (Cash)";
             grdAll.Columns[5].HeaderText = "Pret RON (C.M.)";
             grdAll.Columns[6].HeaderText = "Pret EURO";
@@ -549,7 +571,7 @@ namespace InputsOutputs
             RefreshData();
         }
 
-        public string GetSearchTerm(string partNameSearchTerm)
+        private string GetSearchTerm(string partNameSearchTerm)
         {
             partNameSearchTerm = partNameSearchTerm.Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;");
             return string.Format(
@@ -557,6 +579,11 @@ namespace InputsOutputs
                 string.Join(" AND ", partNameSearchTerm.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries)
                                                         .Select(x => x = string.Format("\"{0}*\"", x)))
             );
+        }
+
+        private void OnNewDataAdded(object sender, EventArgs e)
+        {
+            RefreshData();
         }
     }
 

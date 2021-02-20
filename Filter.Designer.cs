@@ -33,11 +33,11 @@ namespace InputsOutputs
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dateFrom = new System.Windows.Forms.DateTimePicker();
-            this.dateTo = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dateTo = new System.Windows.Forms.DateTimePicker();
+            this.dateFrom = new System.Windows.Forms.DateTimePicker();
             this.btnOk = new System.Windows.Forms.Button();
             this.errDates = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
@@ -49,9 +49,9 @@ namespace InputsOutputs
             // 
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Location = new System.Drawing.Point(16, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(558, 70);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -60,7 +60,7 @@ namespace InputsOutputs
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(16, 25);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(533, 23);
             this.txtName.TabIndex = 0;
@@ -73,41 +73,23 @@ namespace InputsOutputs
             this.groupBox2.Controls.Add(this.dateTo);
             this.groupBox2.Controls.Add(this.dateFrom);
             this.groupBox2.Location = new System.Drawing.Point(16, 92);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(558, 66);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Data";
             // 
-            // dateFrom
+            // label3
             // 
-            this.dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFrom.Location = new System.Drawing.Point(77, 22);
-            this.dateFrom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dateFrom.Name = "dateFrom";
-            this.dateFrom.Size = new System.Drawing.Size(125, 23);
-            this.dateFrom.TabIndex = 2;
-            // 
-            // dateTo
-            // 
-            this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTo.Location = new System.Drawing.Point(331, 22);
-            this.dateTo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dateTo.Name = "dateTo";
-            this.dateTo.Size = new System.Drawing.Size(125, 23);
-            this.dateTo.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 27);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 17);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "de la";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(485, 26);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "(inclusiv)";
             // 
             // label2
             // 
@@ -119,15 +101,33 @@ namespace InputsOutputs
             this.label2.TabIndex = 5;
             this.label2.Text = "pana la";
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(485, 26);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 17);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "(inclusiv)";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 27);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "de la";
+            // 
+            // dateTo
+            // 
+            this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTo.Location = new System.Drawing.Point(331, 22);
+            this.dateTo.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTo.Name = "dateTo";
+            this.dateTo.Size = new System.Drawing.Size(125, 23);
+            this.dateTo.TabIndex = 3;
+            // 
+            // dateFrom
+            // 
+            this.dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateFrom.Location = new System.Drawing.Point(77, 22);
+            this.dateFrom.Margin = new System.Windows.Forms.Padding(4);
+            this.dateFrom.Name = "dateFrom";
+            this.dateFrom.Size = new System.Drawing.Size(125, 23);
+            this.dateFrom.TabIndex = 2;
             // 
             // btnOk
             // 
@@ -143,7 +143,7 @@ namespace InputsOutputs
             // 
             // errDates
             // 
-            this.errDates.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.errDates.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errDates.ContainerControl = this;
             // 
             // Filter
@@ -156,7 +156,7 @@ namespace InputsOutputs
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Filter";

@@ -40,6 +40,10 @@ namespace InputsOutputs
             this.tblFooter = new System.Windows.Forms.TableLayoutPanel();
             this.lblTotalInfo = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblTotalPriceRonCashRegister = new System.Windows.Forms.Label();
+            this.lblTotalPriceRonCash = new System.Windows.Forms.Label();
+            this.lblTotalPricePounds = new System.Windows.Forms.Label();
+            this.lblTotalPriceEuro = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,10 +53,6 @@ namespace InputsOutputs
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblFiltersInfo = new System.Windows.Forms.Label();
-            this.lblTotalPriceEuro = new System.Windows.Forms.Label();
-            this.lblTotalPricePounds = new System.Windows.Forms.Label();
-            this.lblTotalPriceRonCash = new System.Windows.Forms.Label();
-            this.lblTotalPriceRonCashRegister = new System.Windows.Forms.Label();
             this.btnExportToPdf = new System.Windows.Forms.Button();
             this.btnFilter = new System.Windows.Forms.Button();
             this.btnAddReturn = new System.Windows.Forms.Button();
@@ -153,8 +153,8 @@ namespace InputsOutputs
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tblFooter.ColumnCount = 2;
-            this.tblFooter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43F));
             this.tblFooter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57F));
+            this.tblFooter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43F));
             this.tblFooter.Controls.Add(this.lblTotalInfo, 0, 0);
             this.tblFooter.Controls.Add(this.tableLayoutPanel1, 1, 0);
             this.tblFooter.Location = new System.Drawing.Point(3, 391);
@@ -172,7 +172,7 @@ namespace InputsOutputs
             this.lblTotalInfo.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lblTotalInfo.Location = new System.Drawing.Point(3, 0);
             this.lblTotalInfo.Name = "lblTotalInfo";
-            this.lblTotalInfo.Size = new System.Drawing.Size(503, 86);
+            this.lblTotalInfo.Size = new System.Drawing.Size(669, 86);
             this.lblTotalInfo.TabIndex = 1;
             this.lblTotalInfo.Text = "TOTAL";
             this.lblTotalInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -199,23 +199,75 @@ namespace InputsOutputs
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(512, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(678, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.75F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.75F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.5F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(670, 80);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(504, 80);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // lblTotalPriceRonCashRegister
+            // 
+            this.lblTotalPriceRonCashRegister.AutoSize = true;
+            this.lblTotalPriceRonCashRegister.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTotalPriceRonCashRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblTotalPriceRonCashRegister.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblTotalPriceRonCashRegister.Location = new System.Drawing.Point(129, 34);
+            this.lblTotalPriceRonCashRegister.Name = "lblTotalPriceRonCashRegister";
+            this.lblTotalPriceRonCashRegister.Size = new System.Drawing.Size(120, 46);
+            this.lblTotalPriceRonCashRegister.TabIndex = 17;
+            this.lblTotalPriceRonCashRegister.Text = "Total RON (C.M.)";
+            this.lblTotalPriceRonCashRegister.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTotalPriceRonCash
+            // 
+            this.lblTotalPriceRonCash.AutoSize = true;
+            this.lblTotalPriceRonCash.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTotalPriceRonCash.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblTotalPriceRonCash.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblTotalPriceRonCash.Location = new System.Drawing.Point(3, 34);
+            this.lblTotalPriceRonCash.Name = "lblTotalPriceRonCash";
+            this.lblTotalPriceRonCash.Size = new System.Drawing.Size(120, 46);
+            this.lblTotalPriceRonCash.TabIndex = 16;
+            this.lblTotalPriceRonCash.Text = "Total RON (Cash)";
+            this.lblTotalPriceRonCash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTotalPricePounds
+            // 
+            this.lblTotalPricePounds.AutoSize = true;
+            this.lblTotalPricePounds.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTotalPricePounds.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblTotalPricePounds.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblTotalPricePounds.Location = new System.Drawing.Point(381, 34);
+            this.lblTotalPricePounds.Name = "lblTotalPricePounds";
+            this.lblTotalPricePounds.Size = new System.Drawing.Size(120, 46);
+            this.lblTotalPricePounds.TabIndex = 15;
+            this.lblTotalPricePounds.Text = "Total LIRE";
+            this.lblTotalPricePounds.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTotalPriceEuro
+            // 
+            this.lblTotalPriceEuro.AutoSize = true;
+            this.lblTotalPriceEuro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTotalPriceEuro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lblTotalPriceEuro.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblTotalPriceEuro.Location = new System.Drawing.Point(255, 34);
+            this.lblTotalPriceEuro.Name = "lblTotalPriceEuro";
+            this.lblTotalPriceEuro.Size = new System.Drawing.Size(120, 46);
+            this.lblTotalPriceEuro.TabIndex = 14;
+            this.lblTotalPriceEuro.Text = "Total EURO";
+            this.lblTotalPriceEuro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic);
-            this.label8.Location = new System.Drawing.Point(504, 19);
+            this.label8.Location = new System.Drawing.Point(381, 19);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(163, 15);
+            this.label8.Size = new System.Drawing.Size(120, 15);
             this.label8.TabIndex = 13;
             this.label8.Text = "Vanzari - (Cheltuieli + Retur)";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -225,9 +277,9 @@ namespace InputsOutputs
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic);
-            this.label7.Location = new System.Drawing.Point(337, 19);
+            this.label7.Location = new System.Drawing.Point(255, 19);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(161, 15);
+            this.label7.Size = new System.Drawing.Size(120, 15);
             this.label7.TabIndex = 12;
             this.label7.Text = "Vanzari - (Cheltuieli + Retur)";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -237,9 +289,9 @@ namespace InputsOutputs
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic);
-            this.label6.Location = new System.Drawing.Point(170, 19);
+            this.label6.Location = new System.Drawing.Point(129, 19);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(161, 15);
+            this.label6.Size = new System.Drawing.Size(120, 15);
             this.label6.TabIndex = 11;
             this.label6.Text = "Vanzari - (Cheltuieli + Retur)";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -250,9 +302,9 @@ namespace InputsOutputs
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label4.Location = new System.Drawing.Point(504, 0);
+            this.label4.Location = new System.Drawing.Point(381, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(163, 19);
+            this.label4.Size = new System.Drawing.Size(120, 19);
             this.label4.TabIndex = 10;
             this.label4.Text = "LIRE";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -263,9 +315,9 @@ namespace InputsOutputs
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label3.Location = new System.Drawing.Point(337, 0);
+            this.label3.Location = new System.Drawing.Point(255, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(161, 19);
+            this.label3.Size = new System.Drawing.Size(120, 19);
             this.label3.TabIndex = 9;
             this.label3.Text = "EURO";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -276,9 +328,9 @@ namespace InputsOutputs
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label2.Location = new System.Drawing.Point(170, 0);
+            this.label2.Location = new System.Drawing.Point(129, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(161, 19);
+            this.label2.Size = new System.Drawing.Size(120, 19);
             this.label2.TabIndex = 8;
             this.label2.Text = "RON (C.M.)";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -290,7 +342,7 @@ namespace InputsOutputs
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic);
             this.label5.Location = new System.Drawing.Point(3, 19);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(161, 15);
+            this.label5.Size = new System.Drawing.Size(120, 15);
             this.label5.TabIndex = 7;
             this.label5.Text = "Vanzari - (Cheltuieli + Retur)";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -303,7 +355,7 @@ namespace InputsOutputs
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 19);
+            this.label1.Size = new System.Drawing.Size(120, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "RON (Cash)";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -319,58 +371,6 @@ namespace InputsOutputs
             this.lblFiltersInfo.TabIndex = 2;
             this.lblFiltersInfo.Text = "label10";
             this.lblFiltersInfo.Visible = false;
-            // 
-            // lblTotalPriceEuro
-            // 
-            this.lblTotalPriceEuro.AutoSize = true;
-            this.lblTotalPriceEuro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTotalPriceEuro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.lblTotalPriceEuro.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblTotalPriceEuro.Location = new System.Drawing.Point(337, 34);
-            this.lblTotalPriceEuro.Name = "lblTotalPriceEuro";
-            this.lblTotalPriceEuro.Size = new System.Drawing.Size(161, 46);
-            this.lblTotalPriceEuro.TabIndex = 14;
-            this.lblTotalPriceEuro.Text = "Total EURO";
-            this.lblTotalPriceEuro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblTotalPricePounds
-            // 
-            this.lblTotalPricePounds.AutoSize = true;
-            this.lblTotalPricePounds.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTotalPricePounds.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.lblTotalPricePounds.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblTotalPricePounds.Location = new System.Drawing.Point(504, 34);
-            this.lblTotalPricePounds.Name = "lblTotalPricePounds";
-            this.lblTotalPricePounds.Size = new System.Drawing.Size(163, 46);
-            this.lblTotalPricePounds.TabIndex = 15;
-            this.lblTotalPricePounds.Text = "Total LIRE";
-            this.lblTotalPricePounds.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblTotalPriceRonCash
-            // 
-            this.lblTotalPriceRonCash.AutoSize = true;
-            this.lblTotalPriceRonCash.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTotalPriceRonCash.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.lblTotalPriceRonCash.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblTotalPriceRonCash.Location = new System.Drawing.Point(3, 34);
-            this.lblTotalPriceRonCash.Name = "lblTotalPriceRonCash";
-            this.lblTotalPriceRonCash.Size = new System.Drawing.Size(161, 46);
-            this.lblTotalPriceRonCash.TabIndex = 16;
-            this.lblTotalPriceRonCash.Text = "Total RON (Cash)";
-            this.lblTotalPriceRonCash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblTotalPriceRonCashRegister
-            // 
-            this.lblTotalPriceRonCashRegister.AutoSize = true;
-            this.lblTotalPriceRonCashRegister.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTotalPriceRonCashRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.lblTotalPriceRonCashRegister.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblTotalPriceRonCashRegister.Location = new System.Drawing.Point(170, 34);
-            this.lblTotalPriceRonCashRegister.Name = "lblTotalPriceRonCashRegister";
-            this.lblTotalPriceRonCashRegister.Size = new System.Drawing.Size(161, 46);
-            this.lblTotalPriceRonCashRegister.TabIndex = 17;
-            this.lblTotalPriceRonCashRegister.Text = "Total RON (C.M.)";
-            this.lblTotalPriceRonCashRegister.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnExportToPdf
             // 
@@ -407,6 +407,7 @@ namespace InputsOutputs
             this.btnAddReturn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddReturn.UseVisualStyleBackColor = false;
+            this.btnAddReturn.Click += new System.EventHandler(this.btnAddReturn_Click);
             // 
             // btnAddCost
             // 
@@ -422,6 +423,7 @@ namespace InputsOutputs
             this.btnAddCost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddCost.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddCost.UseVisualStyleBackColor = false;
+            this.btnAddCost.Click += new System.EventHandler(this.btnAddCost_Click);
             // 
             // btnAddSale
             // 
@@ -436,6 +438,7 @@ namespace InputsOutputs
             this.btnAddSale.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddSale.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddSale.UseVisualStyleBackColor = false;
+            this.btnAddSale.Click += new System.EventHandler(this.btnAddSale_Click);
             // 
             // imgLogo
             // 
