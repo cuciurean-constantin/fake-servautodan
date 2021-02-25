@@ -538,7 +538,7 @@ namespace InputsOutputs
             grdAll.Columns[0].Visible = false;
             grdAll.Columns[1].HeaderText = "Vanzator";
             grdAll.Columns[2].HeaderText = "Data";
-            grdAll.Columns[3].HeaderText = "Denumire Piesa";
+            grdAll.Columns[3].HeaderText = "Denumire";
             grdAll.Columns[3].Width = 500;
             grdAll.Columns[4].HeaderText = "Pret RON (Cash)";
             grdAll.Columns[5].HeaderText = "Pret RON (C.M.)";
