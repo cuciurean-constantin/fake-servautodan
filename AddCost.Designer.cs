@@ -184,7 +184,7 @@ namespace InputsOutputs
             this.groupBox2.Size = new System.Drawing.Size(543, 59);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Denumire Piesa";
+            this.groupBox2.Text = "Denumire";
             // 
             // txtName
             // 
