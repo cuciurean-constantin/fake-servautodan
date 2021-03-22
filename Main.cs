@@ -178,6 +178,7 @@ namespace InputsOutputs
             titleCell.Colspan = 7;
             titleCell.BackgroundColor = new BaseColor(Color.LightGreen);
             titleCell.HorizontalAlignment = Element.ALIGN_CENTER;
+            titleCell.VerticalAlignment = Element.ALIGN_MIDDLE;
             salesTable.AddCell(titleCell);
 
             foreach (DataGridViewColumn column in grdAll.Columns)
@@ -186,7 +187,7 @@ namespace InputsOutputs
                 {
                     var cell = new PdfPCell(new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.BOLD)));
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
-                    cell.VerticalAlignment = Element.ALIGN_CENTER;
+                    cell.VerticalAlignment = Element.ALIGN_MIDDLE;
                     salesTable.AddCell(cell);
                 }
             }
@@ -201,6 +202,7 @@ namespace InputsOutputs
                             var cellValueToAdd = cell.ColumnIndex == 2 ? string.Format("{0:dd.MM.yyy}", cell.Value) : cell.Value.ToString();
                             var cellToAdd = new PdfPCell(new Phrase(cellValueToAdd, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12)));
                             cellToAdd.HorizontalAlignment = cell.ColumnIndex == 3 ? Element.ALIGN_LEFT : Element.ALIGN_CENTER;
+                            cellToAdd.VerticalAlignment = Element.ALIGN_MIDDLE;
                             salesTable.AddCell(cellToAdd);
                         }
                     }
@@ -209,8 +211,10 @@ namespace InputsOutputs
 
             var totalCell = new PdfPCell(new Phrase("TOTAL VANZARI", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
             totalCell.Colspan = 3;
+            totalCell.Rowspan = 2;
             totalCell.BackgroundColor = new BaseColor(Color.LightGreen);
             totalCell.HorizontalAlignment = Element.ALIGN_CENTER;
+            totalCell.VerticalAlignment = Element.ALIGN_MIDDLE;
             salesTable.AddCell(totalCell);
 
             var totalPriceRonCash = 0;
@@ -228,25 +232,38 @@ namespace InputsOutputs
                 }
             }
 
-            var totalCellRonCash = new PdfPCell(new Phrase(totalPriceRonCash > 0 ? totalPriceRonCash.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            var totalCellRonCash = new PdfPCell(new Phrase(totalPriceRonCash != 0 ? totalPriceRonCash.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
             totalCellRonCash.BackgroundColor = new BaseColor(Color.LightGreen);
             totalCellRonCash.HorizontalAlignment = Element.ALIGN_CENTER;
+            totalCellRonCash.VerticalAlignment = Element.ALIGN_MIDDLE;
             salesTable.AddCell(totalCellRonCash);
 
-            var totalCellRonCashRegister = new PdfPCell(new Phrase(totalPriceRonCashRegister > 0 ? totalPriceRonCashRegister.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            var totalCellRonCashRegister = new PdfPCell(new Phrase(totalPriceRonCashRegister != 0 ? totalPriceRonCashRegister.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
             totalCellRonCashRegister.BackgroundColor = new BaseColor(Color.LightGreen);
             totalCellRonCashRegister.HorizontalAlignment = Element.ALIGN_CENTER;
+            totalCellRonCashRegister.VerticalAlignment = Element.ALIGN_MIDDLE;
             salesTable.AddCell(totalCellRonCashRegister);
 
-            var totalCellEuro = new PdfPCell(new Phrase(totalPriceEuro > 0 ? totalPriceEuro.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            var totalCellEuro = new PdfPCell(new Phrase(totalPriceEuro != 0 ? totalPriceEuro.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            totalCellEuro.Rowspan = 2;
             totalCellEuro.BackgroundColor = new BaseColor(Color.LightGreen);
             totalCellEuro.HorizontalAlignment = Element.ALIGN_CENTER;
+            totalCellEuro.VerticalAlignment = Element.ALIGN_MIDDLE;
             salesTable.AddCell(totalCellEuro);
 
-            var totalCellPounds = new PdfPCell(new Phrase(totalPricePounds > 0 ? totalPricePounds.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            var totalCellPounds = new PdfPCell(new Phrase(totalPricePounds != 0 ? totalPricePounds.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            totalCellPounds.Rowspan = 2;
             totalCellPounds.BackgroundColor = new BaseColor(Color.LightGreen);
             totalCellPounds.HorizontalAlignment = Element.ALIGN_CENTER;
+            totalCellPounds.VerticalAlignment = Element.ALIGN_MIDDLE;
             salesTable.AddCell(totalCellPounds);
+
+            var totalCellRon = new PdfPCell(new Phrase(totalPriceRonCash + totalPriceRonCashRegister != 0 ? (totalPriceRonCash + totalPriceRonCashRegister).ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            totalCellRon.Colspan = 2;
+            totalCellRon.BackgroundColor = new BaseColor(Color.LightGreen);
+            totalCellRon.HorizontalAlignment = Element.ALIGN_CENTER;
+            totalCellRon.VerticalAlignment = Element.ALIGN_MIDDLE;
+            salesTable.AddCell(totalCellRon);
 
             return salesTable;
         }
@@ -264,6 +281,7 @@ namespace InputsOutputs
             titleCell.Colspan = 6;
             titleCell.BackgroundColor = new BaseColor(Color.PaleVioletRed);
             titleCell.HorizontalAlignment = Element.ALIGN_CENTER;
+            titleCell.VerticalAlignment = Element.ALIGN_MIDDLE;
             costsTable.AddCell(titleCell);
 
             foreach (DataGridViewColumn column in grdAll.Columns)
@@ -272,7 +290,7 @@ namespace InputsOutputs
                 {
                     var cell = new PdfPCell(new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.BOLD)));
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
-                    cell.VerticalAlignment = Element.ALIGN_CENTER;
+                    cell.VerticalAlignment = Element.ALIGN_MIDDLE;
                     costsTable.AddCell(cell);
                 }
             }
@@ -287,6 +305,7 @@ namespace InputsOutputs
                             var cellValueToAdd = cell.ColumnIndex == 2 ? string.Format("{0:dd.MM.yyy}", cell.Value) : cell.Value.ToString();
                             var cellToAdd = new PdfPCell(new Phrase(cellValueToAdd, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12)));
                             cellToAdd.HorizontalAlignment = cell.ColumnIndex == 3 ? Element.ALIGN_LEFT : Element.ALIGN_CENTER;
+                            cellToAdd.VerticalAlignment = Element.ALIGN_MIDDLE;
                             costsTable.AddCell(cellToAdd);
                         }
                     }
@@ -295,8 +314,10 @@ namespace InputsOutputs
 
             var totalCell = new PdfPCell(new Phrase("TOTAL CHELTUIELI", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
             totalCell.Colspan = 2;
+            totalCell.Rowspan = 2;
             totalCell.BackgroundColor = new BaseColor(Color.PaleVioletRed);
             totalCell.HorizontalAlignment = Element.ALIGN_CENTER;
+            totalCell.VerticalAlignment = Element.ALIGN_MIDDLE;
             costsTable.AddCell(totalCell);
 
             var totalPriceRonCash = 0;
@@ -314,25 +335,38 @@ namespace InputsOutputs
                 }
             }
 
-            var totalCellRonCash = new PdfPCell(new Phrase(totalPriceRonCash > 0 ? totalPriceRonCash.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            var totalCellRonCash = new PdfPCell(new Phrase(totalPriceRonCash != 0 ? totalPriceRonCash.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
             totalCellRonCash.BackgroundColor = new BaseColor(Color.PaleVioletRed);
             totalCellRonCash.HorizontalAlignment = Element.ALIGN_CENTER;
+            totalCellRonCash.VerticalAlignment = Element.ALIGN_MIDDLE;
             costsTable.AddCell(totalCellRonCash);
 
-            var totalCellRonCashRegister = new PdfPCell(new Phrase(totalPriceRonCashRegister > 0 ? totalPriceRonCashRegister.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            var totalCellRonCashRegister = new PdfPCell(new Phrase(totalPriceRonCashRegister != 0 ? totalPriceRonCashRegister.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
             totalCellRonCashRegister.BackgroundColor = new BaseColor(Color.PaleVioletRed);
             totalCellRonCashRegister.HorizontalAlignment = Element.ALIGN_CENTER;
+            totalCellRonCashRegister.VerticalAlignment = Element.ALIGN_MIDDLE;
             costsTable.AddCell(totalCellRonCashRegister);
 
-            var totalCellEuro = new PdfPCell(new Phrase(totalPriceEuro > 0 ? totalPriceEuro.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            var totalCellEuro = new PdfPCell(new Phrase(totalPriceEuro != 0 ? totalPriceEuro.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            totalCellEuro.Rowspan = 2;
             totalCellEuro.BackgroundColor = new BaseColor(Color.PaleVioletRed);
             totalCellEuro.HorizontalAlignment = Element.ALIGN_CENTER;
+            totalCellEuro.VerticalAlignment = Element.ALIGN_MIDDLE;
             costsTable.AddCell(totalCellEuro);
 
-            var totalCellPounds = new PdfPCell(new Phrase(totalPricePounds > 0 ? totalPricePounds.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            var totalCellPounds = new PdfPCell(new Phrase(totalPricePounds != 0 ? totalPricePounds.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            totalCellPounds.Rowspan = 2;
             totalCellPounds.BackgroundColor = new BaseColor(Color.PaleVioletRed);
             totalCellPounds.HorizontalAlignment = Element.ALIGN_CENTER;
+            totalCellPounds.VerticalAlignment = Element.ALIGN_MIDDLE;
             costsTable.AddCell(totalCellPounds);
+
+            var totalCellRon = new PdfPCell(new Phrase(totalPriceRonCash + totalPriceRonCashRegister != 0 ? (totalPriceRonCash + totalPriceRonCashRegister).ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            totalCellRon.Colspan = 2;
+            totalCellRon.BackgroundColor = new BaseColor(Color.PaleVioletRed);
+            totalCellRon.HorizontalAlignment = Element.ALIGN_CENTER;
+            totalCellRon.VerticalAlignment = Element.ALIGN_MIDDLE;
+            costsTable.AddCell(totalCellRon);
 
             return costsTable;
         }
@@ -350,6 +384,7 @@ namespace InputsOutputs
             titleCell.Colspan = 6;
             titleCell.BackgroundColor = new BaseColor(Color.Khaki);
             titleCell.HorizontalAlignment = Element.ALIGN_CENTER;
+            titleCell.VerticalAlignment = Element.ALIGN_MIDDLE;
             returnsTable.AddCell(titleCell);
 
             foreach (DataGridViewColumn column in grdAll.Columns)
@@ -358,7 +393,7 @@ namespace InputsOutputs
                 {
                     var cell = new PdfPCell(new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.BOLD)));
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
-                    cell.VerticalAlignment = Element.ALIGN_CENTER;
+                    cell.VerticalAlignment = Element.ALIGN_MIDDLE;
                     returnsTable.AddCell(cell);
                 }
             }
@@ -373,6 +408,7 @@ namespace InputsOutputs
                             var cellValueToAdd = cell.ColumnIndex == 2 ? string.Format("{0:dd.MM.yyy}", cell.Value) : cell.Value.ToString();
                             var cellToAdd = new PdfPCell(new Phrase(cellValueToAdd, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12)));
                             cellToAdd.HorizontalAlignment = cell.ColumnIndex == 3 ? Element.ALIGN_LEFT : Element.ALIGN_CENTER;
+                            cellToAdd.VerticalAlignment = Element.ALIGN_MIDDLE;
                             returnsTable.AddCell(cellToAdd);
                         }
                     }
@@ -381,8 +417,10 @@ namespace InputsOutputs
 
             var totalCell = new PdfPCell(new Phrase("TOTAL RETUR PIESE", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
             totalCell.Colspan = 2;
+            totalCell.Rowspan = 2;
             totalCell.BackgroundColor = new BaseColor(Color.Khaki);
             totalCell.HorizontalAlignment = Element.ALIGN_CENTER;
+            totalCell.VerticalAlignment = Element.ALIGN_MIDDLE;
             returnsTable.AddCell(totalCell);
 
             var totalPriceRonCash = 0;
@@ -400,25 +438,38 @@ namespace InputsOutputs
                 }
             }
 
-            var totalCellRonCash = new PdfPCell(new Phrase(totalPriceRonCash > 0 ? totalPriceRonCash.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            var totalCellRonCash = new PdfPCell(new Phrase(totalPriceRonCash != 0 ? totalPriceRonCash.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
             totalCellRonCash.BackgroundColor = new BaseColor(Color.Khaki);
             totalCellRonCash.HorizontalAlignment = Element.ALIGN_CENTER;
+            totalCellRonCash.VerticalAlignment = Element.ALIGN_MIDDLE;
             returnsTable.AddCell(totalCellRonCash);
 
-            var totalCellRonCashRegister = new PdfPCell(new Phrase(totalPriceRonCashRegister > 0 ? totalPriceRonCashRegister.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            var totalCellRonCashRegister = new PdfPCell(new Phrase(totalPriceRonCashRegister != 0 ? totalPriceRonCashRegister.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
             totalCellRonCashRegister.BackgroundColor = new BaseColor(Color.Khaki);
             totalCellRonCashRegister.HorizontalAlignment = Element.ALIGN_CENTER;
+            totalCellRonCashRegister.VerticalAlignment = Element.ALIGN_MIDDLE;
             returnsTable.AddCell(totalCellRonCashRegister);
 
-            var totalCellEuro = new PdfPCell(new Phrase(totalPriceEuro > 0 ? totalPriceEuro.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            var totalCellEuro = new PdfPCell(new Phrase(totalPriceEuro != 0 ? totalPriceEuro.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            totalCellEuro.Rowspan = 2;
             totalCellEuro.BackgroundColor = new BaseColor(Color.Khaki);
             totalCellEuro.HorizontalAlignment = Element.ALIGN_CENTER;
+            totalCellEuro.VerticalAlignment = Element.ALIGN_MIDDLE;
             returnsTable.AddCell(totalCellEuro);
 
-            var totalCellPounds = new PdfPCell(new Phrase(totalPricePounds > 0 ? totalPricePounds.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            var totalCellPounds = new PdfPCell(new Phrase(totalPricePounds != 0 ? totalPricePounds.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            totalCellPounds.Rowspan = 2;
             totalCellPounds.BackgroundColor = new BaseColor(Color.Khaki);
             totalCellPounds.HorizontalAlignment = Element.ALIGN_CENTER;
+            totalCellPounds.VerticalAlignment = Element.ALIGN_MIDDLE;
             returnsTable.AddCell(totalCellPounds);
+
+            var totalCellRon = new PdfPCell(new Phrase(totalPriceRonCash + totalPriceRonCashRegister != 0 ? (totalPriceRonCash + totalPriceRonCashRegister).ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            totalCellRon.Colspan = 2;
+            totalCellRon.BackgroundColor = new BaseColor(Color.Khaki);
+            totalCellRon.HorizontalAlignment = Element.ALIGN_CENTER;
+            totalCellRon.VerticalAlignment = Element.ALIGN_MIDDLE;
+            returnsTable.AddCell(totalCellRon);
 
             return returnsTable;
         }
@@ -435,6 +486,7 @@ namespace InputsOutputs
             titleCell.Colspan = 4;
             titleCell.BackgroundColor = new BaseColor(Color.LightGray);
             titleCell.HorizontalAlignment = Element.ALIGN_CENTER;
+            titleCell.VerticalAlignment = Element.ALIGN_MIDDLE;
             totalsTable.AddCell(titleCell);
 
             foreach (DataGridViewColumn column in grdAll.Columns)
@@ -444,6 +496,7 @@ namespace InputsOutputs
                     var cell = new PdfPCell(new Phrase(column.HeaderText.Replace("Pret ", string.Empty), new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
                     cell.BackgroundColor = new BaseColor(Color.LightGray);
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                    cell.VerticalAlignment = Element.ALIGN_MIDDLE;
                     totalsTable.AddCell(cell);
                 }
             }
@@ -473,22 +526,35 @@ namespace InputsOutputs
             var totalCellRonCash = new PdfPCell(new Phrase(totalPriceRonCash != 0 ? totalPriceRonCash.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
             totalCellRonCash.BackgroundColor = new BaseColor(Color.LightGray);
             totalCellRonCash.HorizontalAlignment = Element.ALIGN_CENTER;
+            totalCellRonCash.VerticalAlignment = Element.ALIGN_MIDDLE;
             totalsTable.AddCell(totalCellRonCash);
 
             var totalCellRonCashRegister = new PdfPCell(new Phrase(totalPriceRonCashRegister != 0 ? totalPriceRonCashRegister.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
             totalCellRonCashRegister.BackgroundColor = new BaseColor(Color.LightGray);
             totalCellRonCashRegister.HorizontalAlignment = Element.ALIGN_CENTER;
+            totalCellRonCashRegister.VerticalAlignment = Element.ALIGN_MIDDLE;
             totalsTable.AddCell(totalCellRonCashRegister);
 
             var totalCellEuro = new PdfPCell(new Phrase(totalPriceEuro != 0 ? totalPriceEuro.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            totalCellEuro.Rowspan = 2;
             totalCellEuro.BackgroundColor = new BaseColor(Color.LightGray);
             totalCellEuro.HorizontalAlignment = Element.ALIGN_CENTER;
+            totalCellEuro.VerticalAlignment = Element.ALIGN_MIDDLE;
             totalsTable.AddCell(totalCellEuro);
 
             var totalCellPounds = new PdfPCell(new Phrase(totalPricePounds != 0 ? totalPricePounds.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            totalCellPounds.Rowspan = 2;
             totalCellPounds.BackgroundColor = new BaseColor(Color.LightGray);
             totalCellPounds.HorizontalAlignment = Element.ALIGN_CENTER;
+            totalCellPounds.VerticalAlignment = Element.ALIGN_MIDDLE;
             totalsTable.AddCell(totalCellPounds);
+
+            var totalCellRon = new PdfPCell(new Phrase(totalPriceRonCash + totalPriceRonCashRegister != 0 ? (totalPriceRonCash + totalPriceRonCashRegister).ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            totalCellRon.Colspan = 2;
+            totalCellRon.BackgroundColor = new BaseColor(Color.LightGray);
+            totalCellRon.HorizontalAlignment = Element.ALIGN_CENTER;
+            totalCellRon.VerticalAlignment = Element.ALIGN_MIDDLE;
+            totalsTable.AddCell(totalCellRon);
 
             return totalsTable;
         }
