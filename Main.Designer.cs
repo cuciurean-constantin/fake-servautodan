@@ -174,7 +174,6 @@ namespace InputsOutputs
             this.lblTotalInfo.Name = "lblTotalInfo";
             this.lblTotalInfo.Size = new System.Drawing.Size(669, 86);
             this.lblTotalInfo.TabIndex = 1;
-            this.lblTotalInfo.Text = "TOTAL";
             this.lblTotalInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel1
