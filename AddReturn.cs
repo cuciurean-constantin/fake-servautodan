@@ -46,13 +46,11 @@ namespace InputsOutputs
                 errorProvider.SetError(txtName, "Trebuie sa introduci denumirea piesei!");
                 return;
             }
-            if (string.IsNullOrEmpty(txtPriceRonCash.Text.Trim()) && string.IsNullOrEmpty(txtPriceRonCashRegister.Text.Trim()) &&
-                string.IsNullOrEmpty(txtPriceEuro.Text.Trim()) && string.IsNullOrEmpty(txtPricePounds.Text.Trim()))
+            if (string.IsNullOrEmpty(txtPriceRonCash.Text.Trim()) && string.IsNullOrEmpty(txtPriceRonCashRegister.Text.Trim()) && string.IsNullOrEmpty(txtPriceEuro.Text.Trim()))
             {
                 errorProvider.SetError(txtPriceRonCash, "Trebuie sa introduci macar un pret!");
                 errorProvider.SetError(txtPriceRonCashRegister, "Trebuie sa introduci macar un pret!");
                 errorProvider.SetError(txtPriceEuro, "Trebuie sa introduci macar un pret!");
-                errorProvider.SetError(txtPricePounds, "Trebuie sa introduci macar un pret!");
                 return;
             }
 
@@ -63,7 +61,7 @@ namespace InputsOutputs
                 PriceRonCash = !string.IsNullOrEmpty(txtPriceRonCash.Text.Trim()) ? Convert.ToInt32(txtPriceRonCash.Text.Trim()) : (int?)null,
                 PriceRonCashRegister = !string.IsNullOrEmpty(txtPriceRonCashRegister.Text.Trim()) ? Convert.ToInt32(txtPriceRonCashRegister.Text.Trim()) : (int?)null,
                 PriceEuro = !string.IsNullOrEmpty(txtPriceEuro.Text.Trim()) ? Convert.ToInt32(txtPriceEuro.Text.Trim()) : (int?)null,
-                PricePounds = !string.IsNullOrEmpty(txtPricePounds.Text.Trim()) ? Convert.ToInt32(txtPricePounds.Text.Trim()) : (int?)null,
+                PricePounds = null,
                 Type = DataType.Return
             });
             db.SaveChanges();

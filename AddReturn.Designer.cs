@@ -33,8 +33,6 @@ namespace InputsOutputs
             this.lnkCancel = new System.Windows.Forms.LinkLabel();
             this.btnSave = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.txtPricePounds = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.txtPriceEuro = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -47,7 +45,6 @@ namespace InputsOutputs
             this.dateTime = new System.Windows.Forms.DateTimePicker();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox3.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -63,7 +60,7 @@ namespace InputsOutputs
             this.lnkCancel.Image = global::InputsOutputs.Properties.Resources.error;
             this.lnkCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lnkCancel.LinkColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lnkCancel.Location = new System.Drawing.Point(178, 271);
+            this.lnkCancel.Location = new System.Drawing.Point(86, 268);
             this.lnkCancel.Name = "lnkCancel";
             this.lnkCancel.Size = new System.Drawing.Size(100, 17);
             this.lnkCancel.TabIndex = 18;
@@ -79,7 +76,7 @@ namespace InputsOutputs
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = global::InputsOutputs.Properties.Resources.exchange;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(284, 261);
+            this.btnSave.Location = new System.Drawing.Point(192, 258);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(162, 37);
             this.btnSave.TabIndex = 17;
@@ -89,35 +86,15 @@ namespace InputsOutputs
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.groupBox7);
             this.groupBox3.Controls.Add(this.groupBox6);
             this.groupBox3.Controls.Add(this.groupBox5);
             this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Location = new System.Drawing.Point(12, 140);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(543, 92);
+            this.groupBox3.Size = new System.Drawing.Size(421, 92);
             this.groupBox3.TabIndex = 16;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Valoare";
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.txtPricePounds);
-            this.groupBox7.Location = new System.Drawing.Point(405, 22);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(127, 60);
-            this.groupBox7.TabIndex = 6;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "£";
-            // 
-            // txtPricePounds
-            // 
-            this.txtPricePounds.Location = new System.Drawing.Point(6, 22);
-            this.txtPricePounds.Name = "txtPricePounds";
-            this.txtPricePounds.Size = new System.Drawing.Size(103, 23);
-            this.txtPricePounds.TabIndex = 6;
-            this.txtPricePounds.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtPricePounds.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
             // groupBox6
             // 
@@ -181,7 +158,7 @@ namespace InputsOutputs
             this.groupBox2.Controls.Add(this.txtName);
             this.groupBox2.Location = new System.Drawing.Point(12, 75);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(543, 59);
+            this.groupBox2.Size = new System.Drawing.Size(421, 59);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Denumire";
@@ -191,7 +168,7 @@ namespace InputsOutputs
             this.txtName.Location = new System.Drawing.Point(12, 23);
             this.txtName.MaxLength = 1024;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(502, 23);
+            this.txtName.Size = new System.Drawing.Size(387, 23);
             this.txtName.TabIndex = 2;
             // 
             // groupBox1
@@ -199,7 +176,7 @@ namespace InputsOutputs
             this.groupBox1.Controls.Add(this.dateTime);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(543, 57);
+            this.groupBox1.Size = new System.Drawing.Size(421, 57);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Data";
@@ -221,7 +198,7 @@ namespace InputsOutputs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 323);
+            this.ClientSize = new System.Drawing.Size(440, 323);
             this.Controls.Add(this.lnkCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox3);
@@ -236,11 +213,9 @@ namespace InputsOutputs
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Ret ...";
+            this.Text = "R ...";
             this.Load += new System.EventHandler(this.AddReturn_Load);
             this.groupBox3.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -260,8 +235,6 @@ namespace InputsOutputs
         private System.Windows.Forms.LinkLabel lnkCancel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.TextBox txtPricePounds;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TextBox txtPriceEuro;
         private System.Windows.Forms.GroupBox groupBox5;

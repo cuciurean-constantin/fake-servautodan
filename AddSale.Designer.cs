@@ -35,8 +35,6 @@ namespace InputsOutputs
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.txtPricePounds = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.txtPriceEuro = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -51,7 +49,6 @@ namespace InputsOutputs
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -64,7 +61,7 @@ namespace InputsOutputs
             this.groupBox1.Controls.Add(this.dateTime);
             this.groupBox1.Location = new System.Drawing.Point(12, 77);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(543, 57);
+            this.groupBox1.Size = new System.Drawing.Size(420, 57);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Data";
@@ -82,7 +79,7 @@ namespace InputsOutputs
             this.groupBox2.Controls.Add(this.txtName);
             this.groupBox2.Location = new System.Drawing.Point(12, 140);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(543, 59);
+            this.groupBox2.Size = new System.Drawing.Size(420, 59);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Denumire";
@@ -92,40 +89,20 @@ namespace InputsOutputs
             this.txtName.Location = new System.Drawing.Point(12, 23);
             this.txtName.MaxLength = 1024;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(502, 23);
+            this.txtName.Size = new System.Drawing.Size(387, 23);
             this.txtName.TabIndex = 2;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.groupBox7);
             this.groupBox3.Controls.Add(this.groupBox6);
             this.groupBox3.Controls.Add(this.groupBox5);
             this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Location = new System.Drawing.Point(12, 205);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(543, 92);
+            this.groupBox3.Size = new System.Drawing.Size(420, 92);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Valoare";
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.txtPricePounds);
-            this.groupBox7.Location = new System.Drawing.Point(405, 22);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(127, 60);
-            this.groupBox7.TabIndex = 6;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "£";
-            // 
-            // txtPricePounds
-            // 
-            this.txtPricePounds.Location = new System.Drawing.Point(6, 22);
-            this.txtPricePounds.Name = "txtPricePounds";
-            this.txtPricePounds.Size = new System.Drawing.Size(103, 23);
-            this.txtPricePounds.TabIndex = 6;
-            this.txtPricePounds.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtPricePounds.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
             // groupBox6
             // 
@@ -191,7 +168,7 @@ namespace InputsOutputs
             this.lnkCancel.Image = global::InputsOutputs.Properties.Resources.error;
             this.lnkCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lnkCancel.LinkColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lnkCancel.Location = new System.Drawing.Point(178, 336);
+            this.lnkCancel.Location = new System.Drawing.Point(88, 337);
             this.lnkCancel.Name = "lnkCancel";
             this.lnkCancel.Size = new System.Drawing.Size(100, 17);
             this.lnkCancel.TabIndex = 8;
@@ -207,7 +184,7 @@ namespace InputsOutputs
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = global::InputsOutputs.Properties.Resources.profits;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(284, 326);
+            this.btnSave.Location = new System.Drawing.Point(194, 327);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(162, 37);
             this.btnSave.TabIndex = 7;
@@ -225,7 +202,7 @@ namespace InputsOutputs
             this.groupBox8.Controls.Add(this.txtSellerName);
             this.groupBox8.Location = new System.Drawing.Point(12, 12);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(543, 59);
+            this.groupBox8.Size = new System.Drawing.Size(420, 59);
             this.groupBox8.TabIndex = 0;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Nume";
@@ -236,14 +213,14 @@ namespace InputsOutputs
             this.txtSellerName.Location = new System.Drawing.Point(12, 23);
             this.txtSellerName.MaxLength = 128;
             this.txtSellerName.Name = "txtSellerName";
-            this.txtSellerName.Size = new System.Drawing.Size(502, 23);
+            this.txtSellerName.Size = new System.Drawing.Size(387, 23);
             this.txtSellerName.TabIndex = 0;
             // 
             // AddSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 389);
+            this.ClientSize = new System.Drawing.Size(444, 389);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.lnkCancel);
             this.Controls.Add(this.btnSave);
@@ -265,8 +242,6 @@ namespace InputsOutputs
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -287,8 +262,6 @@ namespace InputsOutputs
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.TextBox txtPricePounds;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TextBox txtPriceEuro;
         private System.Windows.Forms.GroupBox groupBox5;

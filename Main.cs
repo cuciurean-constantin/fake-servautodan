@@ -33,7 +33,7 @@ namespace InputsOutputs
 
             lblFiltersInfo.Text = $"FILTROS APLICADOS -> Data: [{dateFromFilter.ToShortDateString()}]";
             lblFiltersInfo.Visible = true;
-            lblTotalInfo.Text += $"TOTAL{Environment.NewLine}Data: [{dateFromFilter.ToShortDateString()}]";
+            lblTotalInfo.Text += $"{Environment.NewLine}Data: [{dateFromFilter.ToShortDateString()}]";
 
             FormatGridColums();
         }
@@ -163,15 +163,15 @@ namespace InputsOutputs
 
         private PdfPTable GetSalesTableToExport()
         {
-            var salesTable = new PdfPTable(grdAll.Columns.Count - 2);
+            var salesTable = new PdfPTable(grdAll.Columns.Count - 3);
 
-            salesTable.SetWidths(new float[] { 60f, 60f, 320f, 60f, 60f, 60f, 60f });
+            salesTable.SetWidths(new float[] { 60f, 60f, 320f, 60f, 60f, 60f });
             salesTable.DefaultCell.Padding = 3;
             salesTable.WidthPercentage = 100;
             salesTable.HorizontalAlignment = Element.ALIGN_CENTER;
 
             var titleCell = new PdfPCell(new Phrase("V", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD)));
-            titleCell.Colspan = 7;
+            titleCell.Colspan = 6;
             titleCell.BackgroundColor = new BaseColor(Color.LightGreen);
             titleCell.HorizontalAlignment = Element.ALIGN_CENTER;
             titleCell.VerticalAlignment = Element.ALIGN_MIDDLE;
@@ -179,7 +179,7 @@ namespace InputsOutputs
 
             foreach (DataGridViewColumn column in grdAll.Columns)
             {
-                if (column.Index != 0 && column.Index != 8)
+                if (column.Index != 0 && column.Index != 7 && column.Index != 8)
                 {
                     var cell = new PdfPCell(new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.BOLD)));
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -193,7 +193,7 @@ namespace InputsOutputs
                 {
                     foreach (DataGridViewCell cell in row.Cells)
                     {
-                        if (cell.ColumnIndex != 0 && cell.ColumnIndex != 8)
+                        if (cell.ColumnIndex != 0 && cell.ColumnIndex != 7 && cell.ColumnIndex != 8)
                         {
                             var cellValueToAdd = cell.ColumnIndex == 2 ? string.Format("{0:dd.MM.yyy}", cell.Value) : cell.Value.ToString();
                             var cellToAdd = new PdfPCell(new Phrase(cellValueToAdd, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12)));
@@ -205,7 +205,7 @@ namespace InputsOutputs
                 }
             }
 
-            var totalCell = new PdfPCell(new Phrase("TOTAL V", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            var totalCell = new PdfPCell(new Phrase("T V", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
             totalCell.Colspan = 3;
             totalCell.Rowspan = 2;
             totalCell.BackgroundColor = new BaseColor(Color.LightGreen);
@@ -216,7 +216,7 @@ namespace InputsOutputs
             var totalPriceRonCash = 0;
             var totalPriceRonCashRegister = 0;
             var totalPriceEuro = 0;
-            var totalPricePounds = 0;
+            //var totalPricePounds = 0;
             for (var i = 0; i < grdAll.Rows.Count; i++)
             {
                 if ((int)grdAll.Rows[i].Cells[8].Value == (int)DataType.Sale)
@@ -224,7 +224,7 @@ namespace InputsOutputs
                     totalPriceRonCash += grdAll.Rows[i].Cells[4].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[4].Value) : 0;
                     totalPriceRonCashRegister += grdAll.Rows[i].Cells[5].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[5].Value) : 0;
                     totalPriceEuro += grdAll.Rows[i].Cells[6].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[6].Value) : 0;
-                    totalPricePounds += grdAll.Rows[i].Cells[7].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[7].Value) : 0;
+                    //totalPricePounds += grdAll.Rows[i].Cells[7].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[7].Value) : 0;
                 }
             }
 
@@ -247,12 +247,12 @@ namespace InputsOutputs
             totalCellEuro.VerticalAlignment = Element.ALIGN_MIDDLE;
             salesTable.AddCell(totalCellEuro);
 
-            var totalCellPounds = new PdfPCell(new Phrase(totalPricePounds != 0 ? totalPricePounds.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
-            totalCellPounds.Rowspan = 2;
-            totalCellPounds.BackgroundColor = new BaseColor(Color.LightGreen);
-            totalCellPounds.HorizontalAlignment = Element.ALIGN_CENTER;
-            totalCellPounds.VerticalAlignment = Element.ALIGN_MIDDLE;
-            salesTable.AddCell(totalCellPounds);
+            //var totalCellPounds = new PdfPCell(new Phrase(totalPricePounds != 0 ? totalPricePounds.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            //totalCellPounds.Rowspan = 2;
+            //totalCellPounds.BackgroundColor = new BaseColor(Color.LightGreen);
+            //totalCellPounds.HorizontalAlignment = Element.ALIGN_CENTER;
+            //totalCellPounds.VerticalAlignment = Element.ALIGN_MIDDLE;
+            //salesTable.AddCell(totalCellPounds);
 
             var totalCellRon = new PdfPCell(new Phrase(totalPriceRonCash + totalPriceRonCashRegister != 0 ? (totalPriceRonCash + totalPriceRonCashRegister).ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
             totalCellRon.Colspan = 2;
@@ -266,15 +266,15 @@ namespace InputsOutputs
 
         private PdfPTable GetCostsTableToExport()
         {
-            var costsTable = new PdfPTable(grdAll.Columns.Count - 3);
+            var costsTable = new PdfPTable(grdAll.Columns.Count - 4);
 
-            costsTable.SetWidths(new float[] { 60f, 380f, 60f, 60f, 60f, 60f });
+            costsTable.SetWidths(new float[] { 60f, 380f, 60f, 60f, 60f });
             costsTable.DefaultCell.Padding = 3;
             costsTable.WidthPercentage = 100;
             costsTable.HorizontalAlignment = Element.ALIGN_CENTER;
 
-            var titleCell = new PdfPCell(new Phrase("CH", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD)));
-            titleCell.Colspan = 6;
+            var titleCell = new PdfPCell(new Phrase("C", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD)));
+            titleCell.Colspan = 5;
             titleCell.BackgroundColor = new BaseColor(Color.PaleVioletRed);
             titleCell.HorizontalAlignment = Element.ALIGN_CENTER;
             titleCell.VerticalAlignment = Element.ALIGN_MIDDLE;
@@ -282,7 +282,7 @@ namespace InputsOutputs
 
             foreach (DataGridViewColumn column in grdAll.Columns)
             {
-                if (column.Index != 0 && column.Index != 1 && column.Index != 8)
+                if (column.Index != 0 && column.Index != 1 && column.Index != 7 && column.Index != 8)
                 {
                     var cell = new PdfPCell(new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.BOLD)));
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -296,7 +296,7 @@ namespace InputsOutputs
                 {
                     foreach (DataGridViewCell cell in row.Cells)
                     {
-                        if (cell.ColumnIndex != 0 && cell.ColumnIndex != 1 && cell.ColumnIndex != 8)
+                        if (cell.ColumnIndex != 0 && cell.ColumnIndex != 1 && cell.ColumnIndex != 7 && cell.ColumnIndex != 8)
                         {
                             var cellValueToAdd = cell.ColumnIndex == 2 ? string.Format("{0:dd.MM.yyy}", cell.Value) : cell.Value.ToString();
                             var cellToAdd = new PdfPCell(new Phrase(cellValueToAdd, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12)));
@@ -308,7 +308,7 @@ namespace InputsOutputs
                 }
             }
 
-            var totalCell = new PdfPCell(new Phrase("TOTAL CH", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            var totalCell = new PdfPCell(new Phrase("T C", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
             totalCell.Colspan = 2;
             totalCell.Rowspan = 2;
             totalCell.BackgroundColor = new BaseColor(Color.PaleVioletRed);
@@ -319,7 +319,7 @@ namespace InputsOutputs
             var totalPriceRonCash = 0;
             var totalPriceRonCashRegister = 0;
             var totalPriceEuro = 0;
-            var totalPricePounds = 0;
+            //var totalPricePounds = 0;
             for (var i = 0; i < grdAll.Rows.Count; i++)
             {
                 if ((int)grdAll.Rows[i].Cells[8].Value == (int)DataType.Cost)
@@ -327,7 +327,7 @@ namespace InputsOutputs
                     totalPriceRonCash += grdAll.Rows[i].Cells[4].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[4].Value) : 0;
                     totalPriceRonCashRegister += grdAll.Rows[i].Cells[5].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[5].Value) : 0;
                     totalPriceEuro += grdAll.Rows[i].Cells[6].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[6].Value) : 0;
-                    totalPricePounds += grdAll.Rows[i].Cells[7].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[7].Value) : 0;
+                    //totalPricePounds += grdAll.Rows[i].Cells[7].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[7].Value) : 0;
                 }
             }
 
@@ -350,12 +350,12 @@ namespace InputsOutputs
             totalCellEuro.VerticalAlignment = Element.ALIGN_MIDDLE;
             costsTable.AddCell(totalCellEuro);
 
-            var totalCellPounds = new PdfPCell(new Phrase(totalPricePounds != 0 ? totalPricePounds.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
-            totalCellPounds.Rowspan = 2;
-            totalCellPounds.BackgroundColor = new BaseColor(Color.PaleVioletRed);
-            totalCellPounds.HorizontalAlignment = Element.ALIGN_CENTER;
-            totalCellPounds.VerticalAlignment = Element.ALIGN_MIDDLE;
-            costsTable.AddCell(totalCellPounds);
+            //var totalCellPounds = new PdfPCell(new Phrase(totalPricePounds != 0 ? totalPricePounds.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            //totalCellPounds.Rowspan = 2;
+            //totalCellPounds.BackgroundColor = new BaseColor(Color.PaleVioletRed);
+            //totalCellPounds.HorizontalAlignment = Element.ALIGN_CENTER;
+            //totalCellPounds.VerticalAlignment = Element.ALIGN_MIDDLE;
+            //costsTable.AddCell(totalCellPounds);
 
             var totalCellRon = new PdfPCell(new Phrase(totalPriceRonCash + totalPriceRonCashRegister != 0 ? (totalPriceRonCash + totalPriceRonCashRegister).ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
             totalCellRon.Colspan = 2;
@@ -369,15 +369,15 @@ namespace InputsOutputs
 
         private PdfPTable GetReturnsTableToExport()
         {
-            var returnsTable = new PdfPTable(grdAll.Columns.Count - 3);
+            var returnsTable = new PdfPTable(grdAll.Columns.Count - 4);
 
-            returnsTable.SetWidths(new float[] { 60f, 380f, 60f, 60f, 60f, 60f });
+            returnsTable.SetWidths(new float[] { 60f, 380f, 60f, 60f, 60f });
             returnsTable.DefaultCell.Padding = 3;
             returnsTable.WidthPercentage = 100;
             returnsTable.HorizontalAlignment = Element.ALIGN_CENTER;
 
-            var titleCell = new PdfPCell(new Phrase("Ret", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD)));
-            titleCell.Colspan = 6;
+            var titleCell = new PdfPCell(new Phrase("R", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD)));
+            titleCell.Colspan = 5;
             titleCell.BackgroundColor = new BaseColor(Color.Khaki);
             titleCell.HorizontalAlignment = Element.ALIGN_CENTER;
             titleCell.VerticalAlignment = Element.ALIGN_MIDDLE;
@@ -385,7 +385,7 @@ namespace InputsOutputs
 
             foreach (DataGridViewColumn column in grdAll.Columns)
             {
-                if (column.Index != 0 && column.Index != 1 && column.Index != 8)
+                if (column.Index != 0 && column.Index != 1 && column.Index != 7 && column.Index != 8)
                 {
                     var cell = new PdfPCell(new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.BOLD)));
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -399,7 +399,7 @@ namespace InputsOutputs
                 {
                     foreach (DataGridViewCell cell in row.Cells)
                     {
-                        if (cell.ColumnIndex != 0 && cell.ColumnIndex != 1 && cell.ColumnIndex != 8)
+                        if (cell.ColumnIndex != 0 && cell.ColumnIndex != 1 && cell.ColumnIndex != 7 && cell.ColumnIndex != 8)
                         {
                             var cellValueToAdd = cell.ColumnIndex == 2 ? string.Format("{0:dd.MM.yyy}", cell.Value) : cell.Value.ToString();
                             var cellToAdd = new PdfPCell(new Phrase(cellValueToAdd, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12)));
@@ -411,7 +411,7 @@ namespace InputsOutputs
                 }
             }
 
-            var totalCell = new PdfPCell(new Phrase("TOTAL Ret", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            var totalCell = new PdfPCell(new Phrase("T R", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
             totalCell.Colspan = 2;
             totalCell.Rowspan = 2;
             totalCell.BackgroundColor = new BaseColor(Color.Khaki);
@@ -422,7 +422,7 @@ namespace InputsOutputs
             var totalPriceRonCash = 0;
             var totalPriceRonCashRegister = 0;
             var totalPriceEuro = 0;
-            var totalPricePounds = 0;
+            //var totalPricePounds = 0;
             for (var i = 0; i < grdAll.Rows.Count; i++)
             {
                 if ((int)grdAll.Rows[i].Cells[8].Value == (int)DataType.Return)
@@ -430,7 +430,7 @@ namespace InputsOutputs
                     totalPriceRonCash += grdAll.Rows[i].Cells[4].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[4].Value) : 0;
                     totalPriceRonCashRegister += grdAll.Rows[i].Cells[5].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[5].Value) : 0;
                     totalPriceEuro += grdAll.Rows[i].Cells[6].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[6].Value) : 0;
-                    totalPricePounds += grdAll.Rows[i].Cells[7].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[7].Value) : 0;
+                    //totalPricePounds += grdAll.Rows[i].Cells[7].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[7].Value) : 0;
                 }
             }
 
@@ -453,12 +453,12 @@ namespace InputsOutputs
             totalCellEuro.VerticalAlignment = Element.ALIGN_MIDDLE;
             returnsTable.AddCell(totalCellEuro);
 
-            var totalCellPounds = new PdfPCell(new Phrase(totalPricePounds != 0 ? totalPricePounds.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
-            totalCellPounds.Rowspan = 2;
-            totalCellPounds.BackgroundColor = new BaseColor(Color.Khaki);
-            totalCellPounds.HorizontalAlignment = Element.ALIGN_CENTER;
-            totalCellPounds.VerticalAlignment = Element.ALIGN_MIDDLE;
-            returnsTable.AddCell(totalCellPounds);
+            //var totalCellPounds = new PdfPCell(new Phrase(totalPricePounds != 0 ? totalPricePounds.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            //totalCellPounds.Rowspan = 2;
+            //totalCellPounds.BackgroundColor = new BaseColor(Color.Khaki);
+            //totalCellPounds.HorizontalAlignment = Element.ALIGN_CENTER;
+            //totalCellPounds.VerticalAlignment = Element.ALIGN_MIDDLE;
+            //returnsTable.AddCell(totalCellPounds);
 
             var totalCellRon = new PdfPCell(new Phrase(totalPriceRonCash + totalPriceRonCashRegister != 0 ? (totalPriceRonCash + totalPriceRonCashRegister).ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
             totalCellRon.Colspan = 2;
@@ -472,14 +472,14 @@ namespace InputsOutputs
 
         private PdfPTable GetTotalsTableToExport()
         {
-            var totalsTable = new PdfPTable(4);
+            var totalsTable = new PdfPTable(3);
 
             totalsTable.DefaultCell.Padding = 3;
             totalsTable.WidthPercentage = 100;
             totalsTable.HorizontalAlignment = Element.ALIGN_CENTER;
 
-            var titleCell = new PdfPCell(new Phrase("TOTAL FINAL", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
-            titleCell.Colspan = 4;
+            var titleCell = new PdfPCell(new Phrase("T F", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            titleCell.Colspan = 3;
             titleCell.BackgroundColor = new BaseColor(Color.LightGray);
             titleCell.HorizontalAlignment = Element.ALIGN_CENTER;
             titleCell.VerticalAlignment = Element.ALIGN_MIDDLE;
@@ -487,7 +487,7 @@ namespace InputsOutputs
 
             foreach (DataGridViewColumn column in grdAll.Columns)
             {
-                if (column.Index > 3 && column.Index != 8)
+                if (column.Index > 3 && column.Index != 7 && column.Index != 8)
                 {
                     var cell = new PdfPCell(new Phrase(column.HeaderText.Replace("Pret ", string.Empty), new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
                     cell.BackgroundColor = new BaseColor(Color.LightGray);
@@ -500,7 +500,7 @@ namespace InputsOutputs
             var totalPriceRonCash = 0;
             var totalPriceRonCashRegister = 0;
             var totalPriceEuro = 0;
-            var totalPricePounds = 0;
+            //var totalPricePounds = 0;
             for (var i = 0; i < grdAll.Rows.Count; i++)
             {
                 if ((int)grdAll.Rows[i].Cells[8].Value == (int)DataType.Sale)
@@ -508,14 +508,14 @@ namespace InputsOutputs
                     totalPriceRonCash += grdAll.Rows[i].Cells[4].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[4].Value) : 0;
                     totalPriceRonCashRegister += grdAll.Rows[i].Cells[5].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[5].Value) : 0;
                     totalPriceEuro += grdAll.Rows[i].Cells[6].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[6].Value) : 0;
-                    totalPricePounds += grdAll.Rows[i].Cells[7].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[7].Value) : 0;
+                    //totalPricePounds += grdAll.Rows[i].Cells[7].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[7].Value) : 0;
                 }
                 else
                 {
                     totalPriceRonCash -= grdAll.Rows[i].Cells[4].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[4].Value) : 0;
                     totalPriceRonCashRegister -= grdAll.Rows[i].Cells[5].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[5].Value) : 0;
                     totalPriceEuro -= grdAll.Rows[i].Cells[6].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[6].Value) : 0;
-                    totalPricePounds -= grdAll.Rows[i].Cells[7].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[7].Value) : 0;
+                    //totalPricePounds -= grdAll.Rows[i].Cells[7].Value != DBNull.Value ? Convert.ToInt32(grdAll.Rows[i].Cells[7].Value) : 0;
                 }
             }
 
@@ -538,12 +538,12 @@ namespace InputsOutputs
             totalCellEuro.VerticalAlignment = Element.ALIGN_MIDDLE;
             totalsTable.AddCell(totalCellEuro);
 
-            var totalCellPounds = new PdfPCell(new Phrase(totalPricePounds != 0 ? totalPricePounds.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
-            totalCellPounds.Rowspan = 2;
-            totalCellPounds.BackgroundColor = new BaseColor(Color.LightGray);
-            totalCellPounds.HorizontalAlignment = Element.ALIGN_CENTER;
-            totalCellPounds.VerticalAlignment = Element.ALIGN_MIDDLE;
-            totalsTable.AddCell(totalCellPounds);
+            //var totalCellPounds = new PdfPCell(new Phrase(totalPricePounds != 0 ? totalPricePounds.ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            //totalCellPounds.Rowspan = 2;
+            //totalCellPounds.BackgroundColor = new BaseColor(Color.LightGray);
+            //totalCellPounds.HorizontalAlignment = Element.ALIGN_CENTER;
+            //totalCellPounds.VerticalAlignment = Element.ALIGN_MIDDLE;
+            //totalsTable.AddCell(totalCellPounds);
 
             var totalCellRon = new PdfPCell(new Phrase(totalPriceRonCash + totalPriceRonCashRegister != 0 ? (totalPriceRonCash + totalPriceRonCashRegister).ToString() : "-", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
             totalCellRon.Colspan = 2;
@@ -592,7 +592,7 @@ namespace InputsOutputs
             lblTotalPriceRonCash.Text = totalPriceRonCash != 0 ? totalPriceRonCash.ToString() : "-";
             lblTotalPriceRonCashRegister.Text = totalPriceRonCashRegister != 0 ? totalPriceRonCashRegister.ToString() : "-";
             lblTotalPriceEuro.Text = totalPriceEuro != 0 ? totalPriceEuro.ToString() : "-";
-            lblTotalPricePounds.Text = totalPricePounds != 0 ? totalPricePounds.ToString() : "-";
+            //lblTotalPricePounds.Text = totalPricePounds != 0 ? totalPricePounds.ToString() : "-";
         }
 
         private void FormatGridColums()
@@ -606,13 +606,14 @@ namespace InputsOutputs
             grdAll.Columns[5].HeaderText = "R (C.M.)";
             grdAll.Columns[6].HeaderText = "€";
             grdAll.Columns[7].HeaderText = "£";
+            grdAll.Columns[7].Visible = false;
             grdAll.Columns[8].Visible = false;
         }
 
         private void OnFilterApplied(object sender, EventArgs e)
         {
             lblFiltersInfo.Text = "FILTROS APLICADOS -> ";
-            lblTotalInfo.Text = "TOTAL";
+            lblTotalInfo.Text = "";
 
             if (!string.IsNullOrEmpty(partNameFilter))
             {
