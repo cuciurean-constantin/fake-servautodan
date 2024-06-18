@@ -98,7 +98,7 @@ namespace InputsOutputs
             this.groupBox3.Size = new System.Drawing.Size(543, 92);
             this.groupBox3.TabIndex = 16;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Pret";
+            this.groupBox3.Text = "Valoare";
             // 
             // groupBox7
             // 
@@ -108,7 +108,7 @@ namespace InputsOutputs
             this.groupBox7.Size = new System.Drawing.Size(127, 60);
             this.groupBox7.TabIndex = 6;
             this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "LIRE";
+            this.groupBox7.Text = "£";
             // 
             // txtPricePounds
             // 
@@ -127,7 +127,7 @@ namespace InputsOutputs
             this.groupBox6.Size = new System.Drawing.Size(127, 60);
             this.groupBox6.TabIndex = 5;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "EURO";
+            this.groupBox6.Text = "€";
             // 
             // txtPriceEuro
             // 
@@ -146,7 +146,7 @@ namespace InputsOutputs
             this.groupBox5.Size = new System.Drawing.Size(127, 60);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "RON (C.M.)";
+            this.groupBox5.Text = "R (C.M.)";
             // 
             // txtPriceRonCashRegister
             // 
@@ -165,7 +165,7 @@ namespace InputsOutputs
             this.groupBox4.Size = new System.Drawing.Size(127, 60);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "RON (Cash)";
+            this.groupBox4.Text = "R";
             // 
             // txtPriceRonCash
             // 
@@ -184,7 +184,7 @@ namespace InputsOutputs
             this.groupBox2.Size = new System.Drawing.Size(543, 59);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Denumire Piesa";
+            this.groupBox2.Text = "Denumire";
             // 
             // txtName
             // 
@@ -229,14 +229,14 @@ namespace InputsOutputs
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddReturn";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "AddReturn";
+            this.Text = "Ret ...";
             this.Load += new System.EventHandler(this.AddReturn_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);

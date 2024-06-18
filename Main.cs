@@ -128,10 +128,6 @@ namespace InputsOutputs
                             var pageEventHelper = new PageEventHelper();
                             writer.PageEvent = pageEventHelper;
                             pdfDoc.Open();
-                            var title = new Paragraph("VANZARI / CHELTUIELI / RETUR PIESE", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 20, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue)));
-                            title.Alignment = Element.ALIGN_CENTER;
-                            pdfDoc.Add(title);
-                            pdfDoc.Add(new Paragraph(" ", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 5)));
                             if (!string.IsNullOrEmpty(partNameFilter))
                             {
                                 var filter = new Paragraph($"Termen de cautare: [{partNameFilter}]", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 10));
@@ -174,7 +170,7 @@ namespace InputsOutputs
             salesTable.WidthPercentage = 100;
             salesTable.HorizontalAlignment = Element.ALIGN_CENTER;
 
-            var titleCell = new PdfPCell(new Phrase("VANZARI", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD)));
+            var titleCell = new PdfPCell(new Phrase("V", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD)));
             titleCell.Colspan = 7;
             titleCell.BackgroundColor = new BaseColor(Color.LightGreen);
             titleCell.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -209,7 +205,7 @@ namespace InputsOutputs
                 }
             }
 
-            var totalCell = new PdfPCell(new Phrase("TOTAL VANZARI", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            var totalCell = new PdfPCell(new Phrase("TOTAL V", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
             totalCell.Colspan = 3;
             totalCell.Rowspan = 2;
             totalCell.BackgroundColor = new BaseColor(Color.LightGreen);
@@ -277,7 +273,7 @@ namespace InputsOutputs
             costsTable.WidthPercentage = 100;
             costsTable.HorizontalAlignment = Element.ALIGN_CENTER;
 
-            var titleCell = new PdfPCell(new Phrase("CHELTUIELI", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD)));
+            var titleCell = new PdfPCell(new Phrase("CH", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD)));
             titleCell.Colspan = 6;
             titleCell.BackgroundColor = new BaseColor(Color.PaleVioletRed);
             titleCell.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -312,7 +308,7 @@ namespace InputsOutputs
                 }
             }
 
-            var totalCell = new PdfPCell(new Phrase("TOTAL CHELTUIELI", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            var totalCell = new PdfPCell(new Phrase("TOTAL CH", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
             totalCell.Colspan = 2;
             totalCell.Rowspan = 2;
             totalCell.BackgroundColor = new BaseColor(Color.PaleVioletRed);
@@ -380,7 +376,7 @@ namespace InputsOutputs
             returnsTable.WidthPercentage = 100;
             returnsTable.HorizontalAlignment = Element.ALIGN_CENTER;
 
-            var titleCell = new PdfPCell(new Phrase("RETUR PIESE", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD)));
+            var titleCell = new PdfPCell(new Phrase("Ret", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD)));
             titleCell.Colspan = 6;
             titleCell.BackgroundColor = new BaseColor(Color.Khaki);
             titleCell.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -415,7 +411,7 @@ namespace InputsOutputs
                 }
             }
 
-            var totalCell = new PdfPCell(new Phrase("TOTAL RETUR PIESE", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
+            var totalCell = new PdfPCell(new Phrase("TOTAL Ret", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Blue))));
             totalCell.Colspan = 2;
             totalCell.Rowspan = 2;
             totalCell.BackgroundColor = new BaseColor(Color.Khaki);
@@ -602,14 +598,14 @@ namespace InputsOutputs
         private void FormatGridColums()
         {
             grdAll.Columns[0].Visible = false;
-            grdAll.Columns[1].HeaderText = "Vanzator";
+            grdAll.Columns[1].HeaderText = "Nume";
             grdAll.Columns[2].HeaderText = "Data";
             grdAll.Columns[3].HeaderText = "Denumire";
             grdAll.Columns[3].Width = 500;
-            grdAll.Columns[4].HeaderText = "Pret RON (Cash)";
-            grdAll.Columns[5].HeaderText = "Pret RON (C.M.)";
-            grdAll.Columns[6].HeaderText = "Pret EURO";
-            grdAll.Columns[7].HeaderText = "Pret LIRE";
+            grdAll.Columns[4].HeaderText = "R";
+            grdAll.Columns[5].HeaderText = "R (C.M.)";
+            grdAll.Columns[6].HeaderText = "€";
+            grdAll.Columns[7].HeaderText = "£";
             grdAll.Columns[8].Visible = false;
         }
 

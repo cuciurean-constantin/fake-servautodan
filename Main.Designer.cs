@@ -72,9 +72,9 @@ namespace InputsOutputs
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(101, 13);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(593, 46);
+            this.lblTitle.Size = new System.Drawing.Size(226, 46);
             this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "Vanzari / Cheltuieli / Retur Piese";
+            this.lblTitle.Text = "V / Ch / Ret";
             // 
             // tblPrincipal
             // 
@@ -217,7 +217,7 @@ namespace InputsOutputs
             this.lblTotalPriceRonCashRegister.Name = "lblTotalPriceRonCashRegister";
             this.lblTotalPriceRonCashRegister.Size = new System.Drawing.Size(120, 46);
             this.lblTotalPriceRonCashRegister.TabIndex = 17;
-            this.lblTotalPriceRonCashRegister.Text = "Total RON (C.M.)";
+            this.lblTotalPriceRonCashRegister.Text = "Total R (C.M.)";
             this.lblTotalPriceRonCashRegister.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTotalPriceRonCash
@@ -230,7 +230,7 @@ namespace InputsOutputs
             this.lblTotalPriceRonCash.Name = "lblTotalPriceRonCash";
             this.lblTotalPriceRonCash.Size = new System.Drawing.Size(120, 46);
             this.lblTotalPriceRonCash.TabIndex = 16;
-            this.lblTotalPriceRonCash.Text = "Total RON (Cash)";
+            this.lblTotalPriceRonCash.Text = "Total R";
             this.lblTotalPriceRonCash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTotalPricePounds
@@ -243,7 +243,7 @@ namespace InputsOutputs
             this.lblTotalPricePounds.Name = "lblTotalPricePounds";
             this.lblTotalPricePounds.Size = new System.Drawing.Size(120, 46);
             this.lblTotalPricePounds.TabIndex = 15;
-            this.lblTotalPricePounds.Text = "Total LIRE";
+            this.lblTotalPricePounds.Text = "Total £";
             this.lblTotalPricePounds.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTotalPriceEuro
@@ -256,7 +256,7 @@ namespace InputsOutputs
             this.lblTotalPriceEuro.Name = "lblTotalPriceEuro";
             this.lblTotalPriceEuro.Size = new System.Drawing.Size(120, 46);
             this.lblTotalPriceEuro.TabIndex = 14;
-            this.lblTotalPriceEuro.Text = "Total EURO";
+            this.lblTotalPriceEuro.Text = "Total €";
             this.lblTotalPriceEuro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label8
@@ -268,7 +268,7 @@ namespace InputsOutputs
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(120, 15);
             this.label8.TabIndex = 13;
-            this.label8.Text = "Vanzari - (Cheltuieli + Retur)";
+            this.label8.Text = "V - (Ch + R)";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label7
@@ -280,7 +280,7 @@ namespace InputsOutputs
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(120, 15);
             this.label7.TabIndex = 12;
-            this.label7.Text = "Vanzari - (Cheltuieli + Retur)";
+            this.label7.Text = "V - (Ch + R)";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
@@ -292,7 +292,7 @@ namespace InputsOutputs
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(120, 15);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Vanzari - (Cheltuieli + Retur)";
+            this.label6.Text = "V - (Ch + R)";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
@@ -305,7 +305,7 @@ namespace InputsOutputs
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 19);
             this.label4.TabIndex = 10;
-            this.label4.Text = "LIRE";
+            this.label4.Text = "£";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
@@ -318,7 +318,7 @@ namespace InputsOutputs
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 19);
             this.label3.TabIndex = 9;
-            this.label3.Text = "EURO";
+            this.label3.Text = "€";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -331,7 +331,7 @@ namespace InputsOutputs
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 19);
             this.label2.TabIndex = 8;
-            this.label2.Text = "RON (C.M.)";
+            this.label2.Text = "R (C.M.)";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
@@ -343,7 +343,7 @@ namespace InputsOutputs
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(120, 15);
             this.label5.TabIndex = 7;
-            this.label5.Text = "Vanzari - (Cheltuieli + Retur)";
+            this.label5.Text = "V - (Ch + R)";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
@@ -356,7 +356,7 @@ namespace InputsOutputs
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 19);
             this.label1.TabIndex = 0;
-            this.label1.Text = "RON (Cash)";
+            this.label1.Text = "R";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblFiltersInfo
@@ -402,7 +402,7 @@ namespace InputsOutputs
             this.btnAddReturn.Name = "btnAddReturn";
             this.btnAddReturn.Size = new System.Drawing.Size(216, 39);
             this.btnAddReturn.TabIndex = 5;
-            this.btnAddReturn.Text = "+ RETUR";
+            this.btnAddReturn.Text = "+ Ret";
             this.btnAddReturn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddReturn.UseVisualStyleBackColor = false;
@@ -418,7 +418,7 @@ namespace InputsOutputs
             this.btnAddCost.Name = "btnAddCost";
             this.btnAddCost.Size = new System.Drawing.Size(216, 39);
             this.btnAddCost.TabIndex = 4;
-            this.btnAddCost.Text = "+ CHELTUIELI";
+            this.btnAddCost.Text = "+ CH";
             this.btnAddCost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddCost.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddCost.UseVisualStyleBackColor = false;
@@ -433,7 +433,7 @@ namespace InputsOutputs
             this.btnAddSale.Name = "btnAddSale";
             this.btnAddSale.Size = new System.Drawing.Size(216, 39);
             this.btnAddSale.TabIndex = 3;
-            this.btnAddSale.Text = "+ VANZARI";
+            this.btnAddSale.Text = "+ V";
             this.btnAddSale.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddSale.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddSale.UseVisualStyleBackColor = false;
@@ -464,7 +464,7 @@ namespace InputsOutputs
             this.Controls.Add(this.imgLogo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
-            this.Text = "Vanzari / Cheltuieli / Retur Piese";
+            this.Text = "V / Ch / Ret";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             this.tblPrincipal.ResumeLayout(false);
