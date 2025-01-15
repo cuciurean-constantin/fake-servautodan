@@ -36,6 +36,7 @@ namespace InputsOutputs
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.lblTitle = new System.Windows.Forms.Label();
             this.tblPrincipal = new System.Windows.Forms.TableLayoutPanel();
+            this.btnDeleteAll = new System.Windows.Forms.Button();
             this.grdAll = new System.Windows.Forms.DataGridView();
             this.tblFooter = new System.Windows.Forms.TableLayoutPanel();
             this.lblTotalInfo = new System.Windows.Forms.Label();
@@ -80,6 +81,7 @@ namespace InputsOutputs
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tblPrincipal.ColumnCount = 1;
             this.tblPrincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblPrincipal.Controls.Add(this.btnDeleteAll, 0, 3);
             this.tblPrincipal.Controls.Add(this.grdAll, 0, 2);
             this.tblPrincipal.Controls.Add(this.tblFooter, 0, 4);
             this.tblPrincipal.Controls.Add(this.lblFiltersInfo, 0, 0);
@@ -89,10 +91,21 @@ namespace InputsOutputs
             this.tblPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 17F));
+            this.tblPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
             this.tblPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 92F));
             this.tblPrincipal.Size = new System.Drawing.Size(1191, 480);
             this.tblPrincipal.TabIndex = 2;
+            // 
+            // btnDeleteAll
+            // 
+            this.btnDeleteAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteAll.Image = global::InputsOutputs.Properties.Resources.delete;
+            this.btnDeleteAll.Location = new System.Drawing.Point(1147, 350);
+            this.btnDeleteAll.Name = "btnDeleteAll";
+            this.btnDeleteAll.Size = new System.Drawing.Size(41, 35);
+            this.btnDeleteAll.TabIndex = 8;
+            this.btnDeleteAll.UseVisualStyleBackColor = true;
+            this.btnDeleteAll.Click += new System.EventHandler(this.btnDeleteAll_Click);
             // 
             // grdAll
             // 
@@ -140,7 +153,7 @@ namespace InputsOutputs
             this.grdAll.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.grdAll.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.grdAll.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdAll.Size = new System.Drawing.Size(1185, 325);
+            this.grdAll.Size = new System.Drawing.Size(1185, 301);
             this.grdAll.TabIndex = 0;
             this.grdAll.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grdAll_CellFormatting);
             // 
@@ -330,7 +343,7 @@ namespace InputsOutputs
             // 
             this.btnExportToPdf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExportToPdf.Image = global::InputsOutputs.Properties.Resources.files;
-            this.btnExportToPdf.Location = new System.Drawing.Point(1160, 100);
+            this.btnExportToPdf.Location = new System.Drawing.Point(1154, 101);
             this.btnExportToPdf.Name = "btnExportToPdf";
             this.btnExportToPdf.Size = new System.Drawing.Size(41, 39);
             this.btnExportToPdf.TabIndex = 7;
@@ -341,7 +354,7 @@ namespace InputsOutputs
             // 
             this.btnFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFilter.Image = global::InputsOutputs.Properties.Resources.filter;
-            this.btnFilter.Location = new System.Drawing.Point(1113, 100);
+            this.btnFilter.Location = new System.Drawing.Point(1107, 101);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(41, 39);
             this.btnFilter.TabIndex = 6;
@@ -459,6 +472,7 @@ namespace InputsOutputs
         private System.Windows.Forms.Label lblTotalPriceRonCashRegister;
         private System.Windows.Forms.Label lblTotalPriceEuro;
         private System.Windows.Forms.Button btnExportToPdf;
+        private System.Windows.Forms.Button btnDeleteAll;
     }
 }
 

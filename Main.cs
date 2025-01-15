@@ -1,4 +1,5 @@
-﻿using InputsOutputs.Models.Database;
+﻿using Dapper;
+using InputsOutputs.Models.Database;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System;
@@ -646,6 +647,16 @@ namespace InputsOutputs
 
         private void OnNewDataAdded(object sender, EventArgs e)
         {
+            RefreshData();
+        }
+
+        private void btnDeleteAll_Click(object sender, EventArgs e)
+        {
+            using (var connection = new SqlConnection(Properties.Settings.Default.DefaultConnection))
+            {
+                connection.ExecuteAsync(@"TRUNCATE TABLE [Data]
+                                          DBCC CHECKIDENT ('[Data]', RESEED, 1)");
+            }
             RefreshData();
         }
     }
